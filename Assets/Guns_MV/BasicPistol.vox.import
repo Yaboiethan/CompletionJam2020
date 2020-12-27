@@ -1,0 +1,13 @@
+[remap]
+
+importer="MagicaVoxel-Importer"
+type="Mesh"
+path="res://.import/BasicPistol.vox-e5ee66401f4f98561bc185de1c11efb1.mesh"
+
+[deps]
+
+source_file="res://Assets/Guns_MV/BasicPistol.vox"
+dest_files=[ "res://.import/BasicPistol.vox-e5ee66401f4f98561bc185de1c11efb1.mesh" ]
+
+[params]
+

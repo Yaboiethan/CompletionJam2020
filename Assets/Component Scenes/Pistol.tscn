@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Assets/Guns_MV/BasicPistol.vox" type="ArrayMesh" id=1]
+
+[node name="Pistol_Mesh" type="MeshInstance"]
+transform = Transform( 0.03, 0, 0, 0, 0.03, 0, 0, 0, 0.03, 6.40271e-09, 1.01204, -0.0196499 )
+mesh = ExtResource( 1 )
+material/0 = null
+
+[node name="Fire_Point" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11.4946, 8.70604 )
