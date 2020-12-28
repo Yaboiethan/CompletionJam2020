@@ -38,6 +38,16 @@ public class GunPickup : Area
     {
         w.GetParent().RemoveChild(w);
         AddChild(w);
+        //Update ui
+        if(gunToGet is Gun)
+        {
+            Gun g = (Gun) gunToGet;
+            gunToGet.uiManager.updateAmmoUI(g.getCurClip(), g.getCurAmmo());
+        }
+        else
+        {
+            gunToGet.uiManager.updateAmmoUI();
+        }
         gunToGet = w;
         Visible = true;
         w.inUse = false;
@@ -54,6 +64,16 @@ public class GunPickup : Area
             //Play pickup sound
             audio.Play();
             Visible = false;
+            //Update ui
+            if(gunToGet is Gun)
+            {
+                Gun g = (Gun) gunToGet;
+                gunToGet.uiManager.updateAmmoUI(g.getCurClip(), g.getCurAmmo());
+            }
+            else
+            {
+                gunToGet.uiManager.updateAmmoUI();
+            }
         }
     }
 

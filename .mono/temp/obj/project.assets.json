@@ -8,17 +8,21 @@
     ".NETFramework,Version=v4.7.2": []
   },
   "packageFolders": {
-    "C:\\Users\\ethan\\.nuget\\packages\\": {}
+    "C:\\Users\\ethan\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\USERS\\ETHAN\\DOCUMENTS\\GITHUB\\COMPLETIONJAM2020\\CompletionJam2020.csproj",
+      "projectUniqueName": "C:\\Users\\ethan\\Documents\\GitHub\\CompletionJam2020\\CompletionJam2020.csproj",
       "projectName": "CompletionJam2020",
-      "projectPath": "C:\\USERS\\ETHAN\\DOCUMENTS\\GITHUB\\COMPLETIONJAM2020\\CompletionJam2020.csproj",
+      "projectPath": "C:\\Users\\ethan\\Documents\\GitHub\\CompletionJam2020\\CompletionJam2020.csproj",
       "packagesPath": "C:\\Users\\ethan\\.nuget\\packages\\",
-      "outputPath": "C:\\USERS\\ETHAN\\DOCUMENTS\\GITHUB\\COMPLETIONJAM2020\\.mono\\temp\\obj\\",
+      "outputPath": "C:\\Users\\ethan\\Documents\\GitHub\\CompletionJam2020\\.mono\\temp\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
       "configFilePaths": [
         "C:\\Users\\ethan\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
@@ -43,7 +47,7 @@
     },
     "frameworks": {
       "net472": {
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
       }
     }
   }

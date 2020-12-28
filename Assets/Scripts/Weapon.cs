@@ -12,6 +12,13 @@ public class Weapon : Spatial
     protected bool canUse = true;
 
     protected AnimationPlayer anim;
+    public UI uiManager;
+
+    public override void _Ready()
+    {
+        base._Ready();
+        uiManager = GetTree().Root.GetChild(0).GetNode<UI>("UI");
+    }
 
 
     public override void _PhysicsProcess(float delta)
@@ -28,7 +35,7 @@ public class Weapon : Spatial
     }
 
     //----------Method Functions
-    public void setAnimator(Node holder)
+    public virtual void setAnimator(Node holder)
     {
         anim = GetParent().GetParent().GetParent().GetNode<AnimationPlayer>("AnimationPlayer");
     }

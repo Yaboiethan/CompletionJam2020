@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://assets/player/Player.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Voxel Assets/Player.vox" type="ArrayMesh" id=2]
@@ -36,6 +36,33 @@ tracks/1/keys = {
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
 "values": [ Vector3( 0, 180, 0 ), Vector3( -29.38, 180, 4.87085e-06 ), Vector3( 0, 180, 0 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "Gun_Reload"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Camera/Gun_Holder:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3, 0.6, 0.9, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, -0.523, -0.602 ), Vector3( 0, -0.71402, -0.461528 ), Vector3( 0, -0.597708, -0.461528 ), Vector3( 0, -0.597708, -0.461528 ), Vector3( 0, -0.523, -0.602 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Camera/Gun_Holder:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.3, 0.6, 0.9, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 180, 0 ), Vector3( 2.30534, 94.6679, -26.227 ), Vector3( 2.30534, 94.6679, -26.227 ), Vector3( 2.30534, 94.6679, -26.227 ), Vector3( 0, 180, 0 ) ]
 }
 
 [sub_resource type="Animation" id=4]
@@ -92,8 +119,9 @@ fov = 90.0
 far = 160.0
 
 [node name="Gun_Holder" type="Spatial" parent="Camera"]
-transform = Transform( -1, 0, 1.50996e-07, 0, 1, 0, -1.50996e-07, 0, -1, 0, -0.523, -0.602 )
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, -0.523, -0.602 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/Gun_Recoil = SubResource( 3 )
+anims/Gun_Reload = SubResource( 5 )
 anims/Knife_Stab = SubResource( 4 )

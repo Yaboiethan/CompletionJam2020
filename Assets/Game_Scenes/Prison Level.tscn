@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=2]
+[gd_scene load_steps=32 format=2]
 
 [ext_resource path="res://Assets/Voxel Assets/bathroom/toilet.vox" type="ArrayMesh" id=1]
 [ext_resource path="res://Assets/Voxel Assets/PrisonTable.vox" type="ArrayMesh" id=2]
@@ -19,6 +19,7 @@
 [ext_resource path="res://Assets/Scripts/Item.cs" type="Script" id=17]
 [ext_resource path="res://Assets/Audio Assets/GunPickup.wav" type="AudioStream" id=18]
 [ext_resource path="res://Assets/Audio Assets/411105__kernschall__thin-metal-sliding-door-close.wav" type="AudioStream" id=19]
+[ext_resource path="res://Assets/Component Scenes/UI.tscn" type="PackedScene" id=20]
 
 [sub_resource type="NavigationMesh" id=1]
 vertices = PoolVector3Array( -8.07047, 1.28875, 9.19568, -7.77047, 1.28875, 9.79568, -5.37047, 1.28875, 8.29568, -7.17047, 1.28875, 6.79568, -7.17047, 1.28875, -1.30432, -7.17047, 1.28875, -2.20432, -9.57047, 1.28875, -4.90432, -9.57047, 1.28875, 1.99568, -9.57047, 1.28875, 9.19568, -8.07047, 1.28875, 9.19568, -7.17047, 1.28875, 6.79568, -7.17047, 1.28875, 5.89568, -9.57047, 1.28875, 1.99568, -7.17047, 1.28875, -2.20432, -5.07047, 1.28875, -4.00432, -5.07047, 1.28875, -4.90432, -9.57047, 1.28875, -4.90432, -5.07047, 1.28875, 0.495679, -7.17047, 1.28875, -1.30432, -9.57047, 1.28875, 1.99568, -7.17047, 1.28875, 5.89568, -5.07047, 1.28875, 4.09568, 8.42954, 1.28875, -1.60432, 9.02953, 1.28875, -1.60432, 9.02953, 1.28875, -4.90432, 6.02953, 1.28875, -4.00432, -2.97047, 1.28875, -1.30432, 0.329535, 1.28875, 0.495679, -2.07047, 1.28875, -1.90432, -2.97047, 1.28875, -2.20432, -2.97047, 1.28875, 6.19568, -2.07047, 1.28875, 6.19568, -0.270465, 1.28875, 4.09568, -5.07047, 1.28875, -4.90432, -5.07047, 1.28875, -4.00432, -2.97047, 1.28875, -2.20432, 0.329535, 1.28875, -4.00432, 1.82953, 1.28875, -4.90432, -0.270465, 1.28875, 4.09568, 0.329535, 1.28875, 4.09568, 0.329535, 1.28875, 0.495679, 6.02953, 1.28875, -4.00432, 9.02953, 1.28875, -4.90432, 1.82953, 1.28875, -4.90432, 2.42953, 1.28875, -1.60432, 3.92954, 1.28875, -1.60432, 6.02953, 1.28875, -4.00432, 1.82953, 1.28875, -4.90432, 0.329535, 1.28875, -4.00432, -5.07047, 1.28875, 4.09568, -2.97047, 1.28875, 6.19568, -0.270465, 1.28875, 4.09568, 0.329535, 1.28875, 0.495679, -2.97047, 1.28875, -1.30432, -5.07047, 1.28875, 0.495679, -2.07047, 1.28875, -1.90432, 0.329535, 1.28875, -4.00432, -2.97047, 1.28875, -2.20432, -5.07047, 11.0887, -1.90432, -5.07047, 11.0887, 6.19568, -3.27046, 11.0887, 6.19568, -3.27046, 11.0887, -1.90432, 1.22954, 11.0887, -1.90432, 1.22954, 11.0887, 6.19568, 3.02953, 11.0887, 6.19568, 3.02953, 11.0887, -1.90432, 6.62953, 1.28875, 4.09568, 7.52953, 1.28875, 5.59568, 8.42954, 1.28875, 5.89568, 9.02953, 1.28875, -1.60432, 8.42954, 1.28875, -1.60432, 6.02953, 1.28875, 0.495679, 6.62953, 1.28875, 8.29568, 7.82954, 1.28875, 9.19568, 9.02953, 1.28875, 9.19568, 8.42954, 1.28875, 5.89568, 8.42954, 1.28875, 5.89568, 9.02953, 1.28875, 9.19568, 9.02953, 1.28875, -1.60432, 6.02953, 1.28875, 0.495679, 5.72954, 1.28875, 4.09568, 6.62953, 1.28875, 4.09568, 2.42953, 1.28875, 6.19568, 3.92954, 1.28875, 6.19568, 5.72954, 1.28875, 4.09568, 6.02953, 1.28875, 0.495679, 3.92954, 1.28875, -1.60432, 2.42953, 1.28875, -1.60432, 0.329535, 1.28875, 4.09568, 2.42953, 1.28875, 6.19568, 5.72954, 1.28875, 4.09568, 6.02953, 1.28875, 0.495679, 2.42953, 1.28875, -1.60432, 0.329535, 1.28875, 0.495679, 7.82954, 1.28875, 9.19568, 6.62953, 1.28875, 8.29568, 5.72954, 1.28875, 8.29568, -2.07047, 1.28875, 6.19568, -2.97047, 1.28875, 6.19568, -3.87047, 1.28875, 7.69568, -0.270465, 1.28875, 8.29568, -7.77047, 1.28875, 19.9957, -7.77047, 1.28875, 30.1957, -0.270465, 1.28875, 30.1957, 5.72954, 1.28875, 8.29568, 3.92954, 1.28875, 6.19568, 2.42953, 1.28875, 6.19568, 0.629535, 1.28875, 8.29568, -3.87047, 1.28875, 7.69568, -5.37047, 1.28875, 8.29568, -7.77047, 1.28875, 9.79568, -0.270465, 1.28875, 8.29568, -0.270465, 1.28875, 30.1957, 7.52953, 1.28875, 30.1957, 7.52953, 1.28875, 19.6957, 7.82954, 1.28875, 9.19568, 5.72954, 1.28875, 8.29568, 0.629535, 1.28875, 8.29568, 7.52953, 1.28875, 19.6957, 7.82954, 1.28875, 9.19568, -0.270465, 1.28875, 8.29568, -7.77047, 1.28875, 9.79568, -7.77047, 1.28875, 19.9957, -0.270465, 1.28875, 30.1957, 7.82954, 1.28875, 9.19568, 0.629535, 1.28875, 8.29568, -0.270465, 1.28875, 8.29568, -1.17047, 11.0887, 16.0957, -1.17047, 11.0887, 24.1957, 0.629535, 11.0887, 24.1957, 0.629535, 11.0887, 16.0957 )
@@ -45,16 +46,16 @@ extents = Vector3( 7.24189, 34.0561, 11.0654 )
 [sub_resource type="BoxShape" id=7]
 extents = Vector3( 10.9169, 5.0993, 17.7666 )
 
-[sub_resource type="BoxShape" id=11]
+[sub_resource type="BoxShape" id=8]
 extents = Vector3( 4.96198, 68.5504, 32.8549 )
 
-[sub_resource type="SpatialMaterial" id=8]
+[sub_resource type="SpatialMaterial" id=9]
 albedo_color = Color( 0, 0, 0, 1 )
 
-[sub_resource type="SphereShape" id=9]
+[sub_resource type="SphereShape" id=10]
 radius = 60.704
 
-[sub_resource type="BoxShape" id=10]
+[sub_resource type="BoxShape" id=11]
 extents = Vector3( 3.82638, 2.27169, 5.71421 )
 
 [node name="Prison_Level" type="Spatial"]
@@ -670,7 +671,7 @@ transform = Transform( 0.03, 0, 0, 0, -1.31134e-09, -0.03, 0, 0.03, -1.31134e-09
 space_override = 1
 
 [node name="CollisionShape" type="CollisionShape" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Cell/Vent_Interaction/Area"]
-shape = SubResource( 11 )
+shape = SubResource( 8 )
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Cell/Vent_Interaction"]
 stream = ExtResource( 18 )
@@ -685,7 +686,7 @@ invert_faces = true
 width = 19.7754
 height = 20.8666
 depth = 77.8723
-material = SubResource( 8 )
+material = SubResource( 9 )
 
 [node name="VentCover" type="MeshInstance" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Cell/Vent"]
 transform = Transform( 0.10917, 0, 0, 0, 0.102597, 0, 0, 0, 0.1, -0.0053978, -0.954844, -0.298714 )
@@ -1720,14 +1721,24 @@ mesh = ExtResource( 16 )
 material/0 = null
 
 [node name="CollisionShape" type="CollisionShape" parent="Key_Collectable/Area"]
-shape = SubResource( 9 )
+shape = SubResource( 10 )
 
 [node name="CollisionShape2" type="CollisionShape" parent="Key_Collectable"]
 transform = Transform( 0.05, 0, 0, 0, -8.14603e-09, -0.05, 0, 0.05, -8.14603e-09, 0, 0, 0 )
-shape = SubResource( 10 )
+shape = SubResource( 11 )
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Key_Collectable"]
 stream = ExtResource( 18 )
 unit_size = 2.0
 
+[node name="CanvasLayer" parent="Key_Collectable" instance=ExtResource( 20 )]
+
+[node name="CanvasLayer2" parent="Key_Collectable" instance=ExtResource( 20 )]
+
+[node name="CanvasLayer3" parent="Key_Collectable" instance=ExtResource( 20 )]
+
+[node name="CanvasLayer4" parent="Key_Collectable" instance=ExtResource( 20 )]
+
 [node name="Music Box" type="AudioStreamPlayer" parent="."]
+
+[node name="UI" parent="." instance=ExtResource( 20 )]

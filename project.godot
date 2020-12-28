@@ -33,7 +33,6 @@ config/icon="res://nIcon.png"
 [display]
 
 window/stretch/mode="2d"
-window/stretch/aspect="expand"
 
 [editor_plugins]
 
@@ -79,6 +78,11 @@ Gun_Shoot={
 Interact={
 "deadzone": 0.5,
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":69,"unicode":0,"echo":false,"script":null)
+ ]
+}
+Gun_Reload={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":82,"unicode":0,"echo":false,"script":null)
  ]
 }
 

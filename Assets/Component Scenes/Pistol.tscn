@@ -1,10 +1,12 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Assets/Guns_MV/BasicPistol.vox" type="ArrayMesh" id=1]
 [ext_resource path="res://Assets/Scripts/Gun.cs" type="Script" id=2]
 [ext_resource path="res://Assets/Component Scenes/Bullet_Instance.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Assets/Particle Sprites/SmokeParticle.png" type="Texture" id=4]
 [ext_resource path="res://Assets/Audio Assets/GunShoot.wav" type="AudioStream" id=5]
+[ext_resource path="res://Assets/Audio Assets/GunEmpty.wav" type="AudioStream" id=6]
+[ext_resource path="res://Assets/Audio Assets/GunReload.wav" type="AudioStream" id=7]
 
 [sub_resource type="SpatialMaterial" id=1]
 flags_unshaded = true
@@ -42,6 +44,7 @@ mesh = ExtResource( 1 )
 material/0 = null
 script = ExtResource( 2 )
 bulletInstance = ExtResource( 3 )
+audioClips = [ ExtResource( 5 ), ExtResource( 7 ), ExtResource( 6 ) ]
 
 [node name="Fire_Point" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11.4946, 8.70604 )
