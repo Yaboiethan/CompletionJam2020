@@ -1,0 +1,13 @@
+[remap]
+
+importer="MagicaVoxel-Importer"
+type="Mesh"
+path="res://.import/PrisonBed.vox-7dd1568cd6e2d7d04c47ef4798bb9204.mesh"
+
+[deps]
+
+source_file="res://Assets/Voxel Assets/PrisonBed.vox"
+dest_files=[ "res://.import/PrisonBed.vox-7dd1568cd6e2d7d04c47ef4798bb9204.mesh" ]
+
+[params]
+

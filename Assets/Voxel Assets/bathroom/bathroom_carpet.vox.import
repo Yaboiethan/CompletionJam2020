@@ -1,0 +1,13 @@
+[remap]
+
+importer="MagicaVoxel-Importer"
+type="Mesh"
+path="res://.import/bathroom_carpet.vox-bcd445f7a54bc3987f0b2d273a9e1508.mesh"
+
+[deps]
+
+source_file="res://Assets/Voxel Assets/bathroom/bathroom_carpet.vox"
+dest_files=[ "res://.import/bathroom_carpet.vox-bcd445f7a54bc3987f0b2d273a9e1508.mesh" ]
+
+[params]
+

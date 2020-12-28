@@ -1,0 +1,13 @@
+[remap]
+
+importer="MagicaVoxel-Importer"
+type="Mesh"
+path="res://.import/Knife.vox-d4e69b8aa25585fbae3e351c08052d4e.mesh"
+
+[deps]
+
+source_file="res://Assets/Guns_MV/Knife.vox"
+dest_files=[ "res://.import/Knife.vox-d4e69b8aa25585fbae3e351c08052d4e.mesh" ]
+
+[params]
+

@@ -1,0 +1,13 @@
+[remap]
+
+importer="MagicaVoxel-Importer"
+type="Mesh"
+path="res://.import/CopGuy.vox-722fa53df4ae9ca8b44ccada478bbc8f.mesh"
+
+[deps]
+
+source_file="res://Assets/Voxel Assets/CopGuy.vox"
+dest_files=[ "res://.import/CopGuy.vox-722fa53df4ae9ca8b44ccada478bbc8f.mesh" ]
+
+[params]
+

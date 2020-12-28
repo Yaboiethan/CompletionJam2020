@@ -1,0 +1,13 @@
+[remap]
+
+importer="MagicaVoxel-Importer"
+type="Mesh"
+path="res://.import/bathroom_tile.vox-3dde1a346be655e70e2669a8d8feeeef.mesh"
+
+[deps]
+
+source_file="res://Assets/Voxel Assets/bathroom/bathroom_tile.vox"
+dest_files=[ "res://.import/bathroom_tile.vox-3dde1a346be655e70e2669a8d8feeeef.mesh" ]
+
+[params]
+

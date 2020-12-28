@@ -26,7 +26,7 @@ export var sprint_fov = 90.0
 export(float, 0.0, 1.0) var fov_acceleration = 0.1
 var target_fov = default_fov
 
-
+var gunHolder : Spatial
 
 var target_velocity : Vector3 = Vector3.ZERO
 var yaw_pitch : Vector2 = Vector2.ZERO
@@ -40,6 +40,7 @@ func _ready():
 	$Camera.fov = default_fov
 	if self.mouse_start_captured:
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	gunHolder = get_node("Camera/Gun_Holder");
 	pass # Replace with function body.
 
 func handle_orientation(event : InputEventMouseMotion):
@@ -120,4 +121,14 @@ func _physics_process(delta):
 	handle_raycast();
 	handle_input();
 	handle_movement(delta);
+	pass
+
+func pickUpGun(Gun):
+	var gunPickup = Gun.get_parent();
+	#Check if player has gun to put back
+	if gunHolder.get_child_count() > 0:
+		gunPickup.call_deferred("gunSwap", gunHolder.get_child(0));
+	Gun.get_parent().remove_child(Gun);
+	gunHolder.add_child(Gun);
+	Gun.call("setAnimator", gunHolder);
 	pass

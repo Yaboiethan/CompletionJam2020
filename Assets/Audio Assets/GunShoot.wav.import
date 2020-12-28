@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/GunShoot.wav-b7c8647beb922b9705c74d5f5c84d6b4.sample"
+
+[deps]
+
+source_file="res://Assets/Audio Assets/GunShoot.wav"
+dest_files=[ "res://.import/GunShoot.wav-b7c8647beb922b9705c74d5f5c84d6b4.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

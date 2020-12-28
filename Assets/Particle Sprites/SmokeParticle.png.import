@@ -1,0 +1,36 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path.s3tc="res://.import/SmokeParticle.png-9c4e5d7d96c6aba3f513e999affa101d.s3tc.stex"
+path.etc="res://.import/SmokeParticle.png-9c4e5d7d96c6aba3f513e999affa101d.etc.stex"
+metadata={
+"imported_formats": [ "s3tc", "etc" ],
+"vram_texture": true
+}
+
+[deps]
+
+source_file="res://Assets/Particle Sprites/SmokeParticle.png"
+dest_files=[ "res://.import/SmokeParticle.png-9c4e5d7d96c6aba3f513e999affa101d.s3tc.stex", "res://.import/SmokeParticle.png-9c4e5d7d96c6aba3f513e999affa101d.etc.stex" ]
+
+[params]
+
+compress/mode=2
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/bptc_ldr=0
+compress/normal_map=0
+flags/repeat=true
+flags/filter=true
+flags/mipmaps=true
+flags/anisotropic=false
+flags/srgb=1
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+process/invert_color=false
+stream=false
+size_limit=0
+detect_3d=false
+svg/scale=1.0

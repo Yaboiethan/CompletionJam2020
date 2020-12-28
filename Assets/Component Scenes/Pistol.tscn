@@ -1,11 +1,64 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Assets/Guns_MV/BasicPistol.vox" type="ArrayMesh" id=1]
+[ext_resource path="res://Assets/Scripts/Gun.cs" type="Script" id=2]
+[ext_resource path="res://Assets/Component Scenes/Bullet_Instance.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Assets/Particle Sprites/SmokeParticle.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Audio Assets/GunShoot.wav" type="AudioStream" id=5]
 
-[node name="Pistol_Mesh" type="MeshInstance"]
-transform = Transform( 0.03, 0, 0, 0, 0.03, 0, 0, 0, 0.03, 6.40271e-09, 1.01204, -0.0196499 )
+[sub_resource type="SpatialMaterial" id=1]
+flags_unshaded = true
+vertex_color_use_as_albedo = true
+params_blend_mode = 1
+params_billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+albedo_texture = ExtResource( 4 )
+
+[sub_resource type="Gradient" id=2]
+offsets = PoolRealArray( 0, 0.718518, 1 )
+colors = PoolColorArray( 1, 1, 1, 0.521569, 1, 1, 1, 0.541176, 1, 1, 1, 0 )
+
+[sub_resource type="GradientTexture" id=3]
+gradient = SubResource( 2 )
+
+[sub_resource type="ParticlesMaterial" id=4]
+lifetime_randomness = 1.0
+direction = Vector3( 0, 0, 10 )
+spread = 20.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 200.0
+angle = 720.0
+angle_random = 1.0
+scale = 0.1
+color_ramp = SubResource( 3 )
+
+[sub_resource type="QuadMesh" id=5]
+
+[node name="Pistol" type="MeshInstance"]
+transform = Transform( 0.03, 0, 0, 0, 0.03, 0, 0, 0, 0.03, 0, 0, 0 )
 mesh = ExtResource( 1 )
 material/0 = null
+script = ExtResource( 2 )
+bulletInstance = ExtResource( 3 )
 
 [node name="Fire_Point" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11.4946, 8.70604 )
+
+[node name="Smoke_Particles" type="Particles" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0950098, 12.9993, 10.1287 )
+material_override = SubResource( 1 )
+emitting = false
+amount = 150
+lifetime = 0.2
+one_shot = true
+explosiveness = 0.7
+local_coords = false
+process_material = SubResource( 4 )
+draw_pass_1 = SubResource( 5 )
+
+[node name="AudioPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+volume_db = 0.8
+pitch_scale = 0.96

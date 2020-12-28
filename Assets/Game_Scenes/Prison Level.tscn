@@ -1,0 +1,1733 @@
+[gd_scene load_steps=31 format=2]
+
+[ext_resource path="res://Assets/Voxel Assets/bathroom/toilet.vox" type="ArrayMesh" id=1]
+[ext_resource path="res://Assets/Voxel Assets/PrisonTable.vox" type="ArrayMesh" id=2]
+[ext_resource path="res://Assets/Voxel Assets/PrisonDoor.vox" type="ArrayMesh" id=3]
+[ext_resource path="res://Assets/Voxel Assets/bathroom/sink.vox" type="ArrayMesh" id=4]
+[ext_resource path="res://Assets/Voxel Assets/bathroom/bathroom_carpet.vox" type="ArrayMesh" id=5]
+[ext_resource path="res://Assets/player/Player.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Assets/Materials/PrisonBoxMesh.tres" type="ArrayMesh" id=7]
+[ext_resource path="res://addons/onyx/nodes/onyx/onyx_shape.gd" type="Script" id=8]
+[ext_resource path="res://Assets/Voxel Assets/PrisonBed.vox" type="ArrayMesh" id=9]
+[ext_resource path="res://Assets/Component Scenes/Gun_Pickup.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Assets/Component Scenes/BadAgent.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Assets/Voxel Assets/PrisonLight.vox" type="ArrayMesh" id=12]
+[ext_resource path="res://Assets/Scripts/PrisonLevelManager.cs" type="Script" id=13]
+[ext_resource path="res://Assets/Voxel Assets/VentCover.vox" type="ArrayMesh" id=14]
+[ext_resource path="res://Assets/Component Scenes/Knife.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Assets/Voxel Assets/Key.vox" type="ArrayMesh" id=16]
+[ext_resource path="res://Assets/Scripts/Item.cs" type="Script" id=17]
+[ext_resource path="res://Assets/Audio Assets/GunPickup.wav" type="AudioStream" id=18]
+[ext_resource path="res://Assets/Audio Assets/411105__kernschall__thin-metal-sliding-door-close.wav" type="AudioStream" id=19]
+
+[sub_resource type="NavigationMesh" id=1]
+vertices = PoolVector3Array( -8.07047, 1.28875, 9.19568, -7.77047, 1.28875, 9.79568, -5.37047, 1.28875, 8.29568, -7.17047, 1.28875, 6.79568, -7.17047, 1.28875, -1.30432, -7.17047, 1.28875, -2.20432, -9.57047, 1.28875, -4.90432, -9.57047, 1.28875, 1.99568, -9.57047, 1.28875, 9.19568, -8.07047, 1.28875, 9.19568, -7.17047, 1.28875, 6.79568, -7.17047, 1.28875, 5.89568, -9.57047, 1.28875, 1.99568, -7.17047, 1.28875, -2.20432, -5.07047, 1.28875, -4.00432, -5.07047, 1.28875, -4.90432, -9.57047, 1.28875, -4.90432, -5.07047, 1.28875, 0.495679, -7.17047, 1.28875, -1.30432, -9.57047, 1.28875, 1.99568, -7.17047, 1.28875, 5.89568, -5.07047, 1.28875, 4.09568, 8.42954, 1.28875, -1.60432, 9.02953, 1.28875, -1.60432, 9.02953, 1.28875, -4.90432, 6.02953, 1.28875, -4.00432, -2.97047, 1.28875, -1.30432, 0.329535, 1.28875, 0.495679, -2.07047, 1.28875, -1.90432, -2.97047, 1.28875, -2.20432, -2.97047, 1.28875, 6.19568, -2.07047, 1.28875, 6.19568, -0.270465, 1.28875, 4.09568, -5.07047, 1.28875, -4.90432, -5.07047, 1.28875, -4.00432, -2.97047, 1.28875, -2.20432, 0.329535, 1.28875, -4.00432, 1.82953, 1.28875, -4.90432, -0.270465, 1.28875, 4.09568, 0.329535, 1.28875, 4.09568, 0.329535, 1.28875, 0.495679, 6.02953, 1.28875, -4.00432, 9.02953, 1.28875, -4.90432, 1.82953, 1.28875, -4.90432, 2.42953, 1.28875, -1.60432, 3.92954, 1.28875, -1.60432, 6.02953, 1.28875, -4.00432, 1.82953, 1.28875, -4.90432, 0.329535, 1.28875, -4.00432, -5.07047, 1.28875, 4.09568, -2.97047, 1.28875, 6.19568, -0.270465, 1.28875, 4.09568, 0.329535, 1.28875, 0.495679, -2.97047, 1.28875, -1.30432, -5.07047, 1.28875, 0.495679, -2.07047, 1.28875, -1.90432, 0.329535, 1.28875, -4.00432, -2.97047, 1.28875, -2.20432, -5.07047, 11.0887, -1.90432, -5.07047, 11.0887, 6.19568, -3.27046, 11.0887, 6.19568, -3.27046, 11.0887, -1.90432, 1.22954, 11.0887, -1.90432, 1.22954, 11.0887, 6.19568, 3.02953, 11.0887, 6.19568, 3.02953, 11.0887, -1.90432, 6.62953, 1.28875, 4.09568, 7.52953, 1.28875, 5.59568, 8.42954, 1.28875, 5.89568, 9.02953, 1.28875, -1.60432, 8.42954, 1.28875, -1.60432, 6.02953, 1.28875, 0.495679, 6.62953, 1.28875, 8.29568, 7.82954, 1.28875, 9.19568, 9.02953, 1.28875, 9.19568, 8.42954, 1.28875, 5.89568, 8.42954, 1.28875, 5.89568, 9.02953, 1.28875, 9.19568, 9.02953, 1.28875, -1.60432, 6.02953, 1.28875, 0.495679, 5.72954, 1.28875, 4.09568, 6.62953, 1.28875, 4.09568, 2.42953, 1.28875, 6.19568, 3.92954, 1.28875, 6.19568, 5.72954, 1.28875, 4.09568, 6.02953, 1.28875, 0.495679, 3.92954, 1.28875, -1.60432, 2.42953, 1.28875, -1.60432, 0.329535, 1.28875, 4.09568, 2.42953, 1.28875, 6.19568, 5.72954, 1.28875, 4.09568, 6.02953, 1.28875, 0.495679, 2.42953, 1.28875, -1.60432, 0.329535, 1.28875, 0.495679, 7.82954, 1.28875, 9.19568, 6.62953, 1.28875, 8.29568, 5.72954, 1.28875, 8.29568, -2.07047, 1.28875, 6.19568, -2.97047, 1.28875, 6.19568, -3.87047, 1.28875, 7.69568, -0.270465, 1.28875, 8.29568, -7.77047, 1.28875, 19.9957, -7.77047, 1.28875, 30.1957, -0.270465, 1.28875, 30.1957, 5.72954, 1.28875, 8.29568, 3.92954, 1.28875, 6.19568, 2.42953, 1.28875, 6.19568, 0.629535, 1.28875, 8.29568, -3.87047, 1.28875, 7.69568, -5.37047, 1.28875, 8.29568, -7.77047, 1.28875, 9.79568, -0.270465, 1.28875, 8.29568, -0.270465, 1.28875, 30.1957, 7.52953, 1.28875, 30.1957, 7.52953, 1.28875, 19.6957, 7.82954, 1.28875, 9.19568, 5.72954, 1.28875, 8.29568, 0.629535, 1.28875, 8.29568, 7.52953, 1.28875, 19.6957, 7.82954, 1.28875, 9.19568, -0.270465, 1.28875, 8.29568, -7.77047, 1.28875, 9.79568, -7.77047, 1.28875, 19.9957, -0.270465, 1.28875, 30.1957, 7.82954, 1.28875, 9.19568, 0.629535, 1.28875, 8.29568, -0.270465, 1.28875, 8.29568, -1.17047, 11.0887, 16.0957, -1.17047, 11.0887, 24.1957, 0.629535, 11.0887, 24.1957, 0.629535, 11.0887, 16.0957 )
+polygons = [ PoolIntArray( 0, 3, 1 ), PoolIntArray( 1, 3, 2 ), PoolIntArray( 5, 4, 6 ), PoolIntArray( 6, 4, 7 ), PoolIntArray( 10, 9, 11 ), PoolIntArray( 11, 9, 8 ), PoolIntArray( 11, 8, 12 ), PoolIntArray( 14, 13, 15 ), PoolIntArray( 15, 13, 16 ), PoolIntArray( 18, 17, 19 ), PoolIntArray( 19, 17, 21 ), PoolIntArray( 19, 21, 20 ), PoolIntArray( 23, 22, 24 ), PoolIntArray( 24, 22, 25 ), PoolIntArray( 29, 28, 26 ), PoolIntArray( 26, 28, 27 ), PoolIntArray( 32, 31, 30 ), PoolIntArray( 34, 33, 35 ), PoolIntArray( 35, 33, 36 ), PoolIntArray( 36, 33, 37 ), PoolIntArray( 40, 39, 38 ), PoolIntArray( 43, 42, 41 ), PoolIntArray( 48, 47, 44 ), PoolIntArray( 44, 47, 45 ), PoolIntArray( 45, 47, 46 ), PoolIntArray( 50, 49, 51 ), PoolIntArray( 51, 49, 54 ), PoolIntArray( 51, 54, 53 ), PoolIntArray( 51, 53, 52 ), PoolIntArray( 57, 56, 55 ), PoolIntArray( 61, 60, 58 ), PoolIntArray( 58, 60, 59 ), PoolIntArray( 65, 64, 62 ), PoolIntArray( 62, 64, 63 ), PoolIntArray( 67, 66, 68 ), PoolIntArray( 68, 66, 71 ), PoolIntArray( 68, 71, 70 ), PoolIntArray( 68, 70, 69 ), PoolIntArray( 73, 72, 74 ), PoolIntArray( 74, 72, 75 ), PoolIntArray( 78, 77, 76 ), PoolIntArray( 81, 80, 79 ), PoolIntArray( 84, 83, 82 ), PoolIntArray( 87, 86, 85 ), PoolIntArray( 89, 88, 90 ), PoolIntArray( 90, 88, 93 ), PoolIntArray( 90, 93, 91 ), PoolIntArray( 91, 93, 92 ), PoolIntArray( 96, 95, 94 ), PoolIntArray( 98, 97, 99 ), PoolIntArray( 99, 97, 100 ), PoolIntArray( 103, 102, 101 ), PoolIntArray( 105, 104, 106 ), PoolIntArray( 106, 104, 107 ), PoolIntArray( 109, 108, 110 ), PoolIntArray( 110, 108, 111 ), PoolIntArray( 114, 113, 112 ), PoolIntArray( 116, 115, 117 ), PoolIntArray( 120, 119, 121 ), PoolIntArray( 121, 119, 118 ), PoolIntArray( 121, 118, 122 ), PoolIntArray( 122, 118, 123 ), PoolIntArray( 126, 125, 124 ), PoolIntArray( 130, 129, 127 ), PoolIntArray( 127, 129, 128 ) ]
+agent/height = 0.8
+agent/radius = 0.2
+agent/max_climb = 0.1
+
+[sub_resource type="BoxShape" id=2]
+extents = Vector3( 10.5451, 10.901, 10.1028 )
+
+[sub_resource type="BoxShape" id=3]
+extents = Vector3( 3.03175, 0.66471, 2.46977 )
+
+[sub_resource type="BoxShape" id=4]
+extents = Vector3( 17.0799, 18.286, 1 )
+
+[sub_resource type="BoxShape" id=5]
+extents = Vector3( 20.5586, 50.5088, 16.7443 )
+
+[sub_resource type="BoxShape" id=6]
+extents = Vector3( 7.24189, 34.0561, 11.0654 )
+
+[sub_resource type="BoxShape" id=7]
+extents = Vector3( 10.9169, 5.0993, 17.7666 )
+
+[sub_resource type="BoxShape" id=11]
+extents = Vector3( 4.96198, 68.5504, 32.8549 )
+
+[sub_resource type="SpatialMaterial" id=8]
+albedo_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="SphereShape" id=9]
+radius = 60.704
+
+[sub_resource type="BoxShape" id=10]
+extents = Vector3( 3.82638, 2.27169, 5.71421 )
+
+[node name="Prison_Level" type="Spatial"]
+script = ExtResource( 13 )
+
+[node name="Player" parent="." instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12.1873, 0.410745, 6.34557 )
+mass = 5.0
+mouse_sensitivity = Vector2( 0.5, 0.5 )
+jump_speed = 4.0
+
+[node name="Pistol_Pickup" parent="." instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 0.842434, 0.5388, 0, -0.5388, 0.842434, -5.05712, 2.5148, 6.07039 )
+
+[node name="Knife_Pickup" parent="." instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 0.842434, 0.5388, 0, -0.5388, 0.842434, -11.593, 2.97201, 8.51899 )
+gunOverride = ExtResource( 15 )
+canPickUp = false
+
+[node name="Level_Geometry" type="Navigation" parent="."]
+
+[node name="NavigationMeshInstance" type="NavigationMeshInstance" parent="Level_Geometry"]
+navmesh = SubResource( 1 )
+
+[node name="CSGCombiner" type="CSGCombiner" parent="Level_Geometry/NavigationMeshInstance"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.949396, 0 )
+use_collision = true
+
+[node name="Prison_CellRoom" type="CSGMesh" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.208716, 0, 2.2319 )
+use_collision = true
+invert_faces = true
+mesh = ExtResource( 7 )
+script = ExtResource( 8 )
+shape_type = 0
+uv_options/uv_scale = Vector2( 1, 1 )
+uv_options/flip_uvs_horizontally = false
+uv_options/flip_uvs_vertically = false
+hollow_mode/enable_hollow_mode = false
+hollow_mode/hollow_material = null
+hollow_mode/hollow_mesh = null
+hollow_last_position = Vector3( 0, 0, 0 )
+_gen_property_list = [ {
+"hint": 3,
+"hint_string": "Center, Base, Bottom Corner",
+"name": "origin_mode",
+"private_name": "origin_mode",
+"type": 2,
+"usage": 3
+}, {
+"hint": 3,
+"hint_string": "Proportional Overlap, Per-Face Mapping",
+"name": "uv_options/unwrap_method",
+"private_name": "unwrap_method",
+"type": 2,
+"usage": 3
+}, {
+"hint": 3,
+"name": "x_minus_position",
+"private_name": "x_minus_position",
+"type": 3
+}, {
+"hint": 3,
+"name": "x_plus_position",
+"private_name": "x_plus_position",
+"type": 3
+}, {
+"hint": 3,
+"name": "y_minus_position",
+"private_name": "y_minus_position",
+"type": 3
+}, {
+"hint": 3,
+"name": "y_plus_position",
+"private_name": "y_plus_position",
+"type": 3
+}, {
+"hint": 3,
+"name": "z_minus_position",
+"private_name": "z_minus_position",
+"type": 3
+}, {
+"hint": 3,
+"name": "z_plus_position",
+"private_name": "z_plus_position",
+"type": 3
+}, {
+"hint": 3,
+"name": "hollow_mode/x_minus_margin",
+"private_name": "_x_minus_hollow",
+"type": 3
+}, {
+"hint": 3,
+"name": "hollow_mode/x_plus_margin",
+"private_name": "_x_plus_hollow",
+"type": 3
+}, {
+"hint": 3,
+"name": "hollow_mode/y_minus_margin",
+"private_name": "_y_minus_hollow",
+"type": 3
+}, {
+"hint": 3,
+"name": "hollow_mode/y_plus_margin",
+"private_name": "_y_plus_hollow",
+"type": 3
+}, {
+"hint": 3,
+"name": "hollow_mode/z_minus_margin",
+"private_name": "_z_minus_hollow",
+"type": 3
+}, {
+"hint": 3,
+"name": "hollow_mode/z_plus_margin",
+"private_name": "_z_plus_hollow",
+"type": 3
+} ]
+origin_mode = null
+uv_options/unwrap_method = null
+x_minus_position = null
+x_plus_position = null
+y_minus_position = null
+y_plus_position = null
+z_minus_position = null
+z_plus_position = null
+hollow_mode/x_minus_margin = null
+hollow_mode/x_plus_margin = null
+hollow_mode/y_minus_margin = null
+hollow_mode/y_plus_margin = null
+hollow_mode/z_minus_margin = null
+hollow_mode/z_plus_margin = null
+
+[node name="PrisonTable" type="MeshInstance" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Prison_CellRoom"]
+transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -4.88882, 0.00457704, 4.00342 )
+mesh = ExtResource( 2 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Prison_CellRoom/PrisonTable"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Prison_CellRoom/PrisonTable/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Prison_CellRoom/PrisonTable/StaticBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.23535, 14.6123 )
+shape = SubResource( 3 )
+
+[node name="CollisionShape3" type="CollisionShape" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Prison_CellRoom/PrisonTable/StaticBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.23535, -14.6358 )
+shape = SubResource( 3 )
+
+[node name="CollisionShape4" type="CollisionShape" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Prison_CellRoom/PrisonTable/StaticBody"]
+transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 14.589, 6.23535, -0.0468369 )
+shape = SubResource( 3 )
+
+[node name="CollisionShape5" type="CollisionShape" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Prison_CellRoom/PrisonTable/StaticBody"]
+transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, -14.5188, 6.23535, -0.0468369 )
+shape = SubResource( 3 )
+
+[node name="PrisonTable2" type="MeshInstance" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Prison_CellRoom"]
+transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.437278, 0.00457704, 4.00342 )
+mesh = ExtResource( 2 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Prison_CellRoom/PrisonTable2"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Prison_CellRoom/PrisonTable2/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Prison_CellRoom/PrisonTable2/StaticBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.23535, 14.6123 )
+shape = SubResource( 3 )
+
+[node name="CollisionShape3" type="CollisionShape" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Prison_CellRoom/PrisonTable2/StaticBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.23535, -14.6358 )
+shape = SubResource( 3 )
+
+[node name="CollisionShape4" type="CollisionShape" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Prison_CellRoom/PrisonTable2/StaticBody"]
+transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 14.589, 6.23535, -0.0468369 )
+shape = SubResource( 3 )
+
+[node name="CollisionShape5" type="CollisionShape" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Prison_CellRoom/PrisonTable2/StaticBody"]
+transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, -14.5188, 6.23535, -0.0468369 )
+shape = SubResource( 3 )
+
+[node name="PrisonTable3" type="MeshInstance" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Prison_CellRoom"]
+transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 6.4244, 0.00457704, 4.00342 )
+mesh = ExtResource( 2 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Prison_CellRoom/PrisonTable3"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Prison_CellRoom/PrisonTable3/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Prison_CellRoom/PrisonTable3/StaticBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.23535, 14.6123 )
+shape = SubResource( 3 )
+
+[node name="CollisionShape3" type="CollisionShape" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Prison_CellRoom/PrisonTable3/StaticBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.23535, -14.6358 )
+shape = SubResource( 3 )
+
+[node name="CollisionShape4" type="CollisionShape" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Prison_CellRoom/PrisonTable3/StaticBody"]
+transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 14.589, 6.23535, -0.0468369 )
+shape = SubResource( 3 )
+
+[node name="CollisionShape5" type="CollisionShape" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Prison_CellRoom/PrisonTable3/StaticBody"]
+transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, -14.5188, 6.23535, -0.0468369 )
+shape = SubResource( 3 )
+
+[node name="PrisonTable4" type="MeshInstance" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Prison_CellRoom"]
+transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -4.88882, 0.00457704, -3.99812 )
+mesh = ExtResource( 2 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Prison_CellRoom/PrisonTable4"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Prison_CellRoom/PrisonTable4/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Prison_CellRoom/PrisonTable4/StaticBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.23535, 14.6123 )
+shape = SubResource( 3 )
+
+[node name="CollisionShape3" type="CollisionShape" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Prison_CellRoom/PrisonTable4/StaticBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.23535, -14.6358 )
+shape = SubResource( 3 )
+
+[node name="CollisionShape4" type="CollisionShape" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Prison_CellRoom/PrisonTable4/StaticBody"]
+transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 14.589, 6.23535, -0.0468369 )
+shape = SubResource( 3 )
+
+[node name="CollisionShape5" type="CollisionShape" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Prison_CellRoom/PrisonTable4/StaticBody"]
+transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, -14.5188, 6.23535, -0.0468369 )
+shape = SubResource( 3 )
+
+[node name="PrisonTable5" type="MeshInstance" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Prison_CellRoom"]
+transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.409389, 0.00457799, -3.97902 )
+mesh = ExtResource( 2 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Prison_CellRoom/PrisonTable5"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Prison_CellRoom/PrisonTable5/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Prison_CellRoom/PrisonTable5/StaticBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.23535, 14.6123 )
+shape = SubResource( 3 )
+
+[node name="CollisionShape3" type="CollisionShape" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Prison_CellRoom/PrisonTable5/StaticBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.23535, -14.6358 )
+shape = SubResource( 3 )
+
+[node name="CollisionShape4" type="CollisionShape" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Prison_CellRoom/PrisonTable5/StaticBody"]
+transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 14.589, 6.23535, -0.0468369 )
+shape = SubResource( 3 )
+
+[node name="CollisionShape5" type="CollisionShape" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Prison_CellRoom/PrisonTable5/StaticBody"]
+transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, -14.5188, 6.23535, -0.0468369 )
+shape = SubResource( 3 )
+
+[node name="PrisonTable6" type="MeshInstance" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Prison_CellRoom"]
+transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 6.4244, 0.00457704, -3.99812 )
+mesh = ExtResource( 2 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Prison_CellRoom/PrisonTable6"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Prison_CellRoom/PrisonTable6/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Prison_CellRoom/PrisonTable6/StaticBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.23535, 14.6123 )
+shape = SubResource( 3 )
+
+[node name="CollisionShape3" type="CollisionShape" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Prison_CellRoom/PrisonTable6/StaticBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.23535, -14.6358 )
+shape = SubResource( 3 )
+
+[node name="CollisionShape4" type="CollisionShape" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Prison_CellRoom/PrisonTable6/StaticBody"]
+transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 14.589, 6.23535, -0.0468369 )
+shape = SubResource( 3 )
+
+[node name="CollisionShape5" type="CollisionShape" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Prison_CellRoom/PrisonTable6/StaticBody"]
+transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, -14.5188, 6.23535, -0.0468369 )
+shape = SubResource( 3 )
+
+[node name="Prison_CellRoom2" type="CSGMesh" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner"]
+transform = Transform( 0.84, 0, 0, 0, 0.9801, 0, 0, 0, 1.4, -0.208716, 0, 19.9338 )
+use_collision = true
+invert_faces = true
+mesh = ExtResource( 7 )
+script = ExtResource( 8 )
+shape_type = 0
+uv_options/uv_scale = Vector2( 1, 1 )
+uv_options/flip_uvs_horizontally = false
+uv_options/flip_uvs_vertically = false
+hollow_mode/enable_hollow_mode = false
+hollow_mode/hollow_material = null
+hollow_mode/hollow_mesh = null
+hollow_last_position = Vector3( 0, 0, 0 )
+_gen_property_list = [ {
+"hint": 3,
+"hint_string": "Center, Base, Bottom Corner",
+"name": "origin_mode",
+"private_name": "origin_mode",
+"type": 2,
+"usage": 3
+}, {
+"hint": 3,
+"hint_string": "Proportional Overlap, Per-Face Mapping",
+"name": "uv_options/unwrap_method",
+"private_name": "unwrap_method",
+"type": 2,
+"usage": 3
+}, {
+"hint": 3,
+"name": "x_minus_position",
+"private_name": "x_minus_position",
+"type": 3
+}, {
+"hint": 3,
+"name": "x_plus_position",
+"private_name": "x_plus_position",
+"type": 3
+}, {
+"hint": 3,
+"name": "y_minus_position",
+"private_name": "y_minus_position",
+"type": 3
+}, {
+"hint": 3,
+"name": "y_plus_position",
+"private_name": "y_plus_position",
+"type": 3
+}, {
+"hint": 3,
+"name": "z_minus_position",
+"private_name": "z_minus_position",
+"type": 3
+}, {
+"hint": 3,
+"name": "z_plus_position",
+"private_name": "z_plus_position",
+"type": 3
+}, {
+"hint": 3,
+"name": "hollow_mode/x_minus_margin",
+"private_name": "_x_minus_hollow",
+"type": 3
+}, {
+"hint": 3,
+"name": "hollow_mode/x_plus_margin",
+"private_name": "_x_plus_hollow",
+"type": 3
+}, {
+"hint": 3,
+"name": "hollow_mode/y_minus_margin",
+"private_name": "_y_minus_hollow",
+"type": 3
+}, {
+"hint": 3,
+"name": "hollow_mode/y_plus_margin",
+"private_name": "_y_plus_hollow",
+"type": 3
+}, {
+"hint": 3,
+"name": "hollow_mode/z_minus_margin",
+"private_name": "_z_minus_hollow",
+"type": 3
+}, {
+"hint": 3,
+"name": "hollow_mode/z_plus_margin",
+"private_name": "_z_plus_hollow",
+"type": 3
+} ]
+origin_mode = null
+uv_options/unwrap_method = null
+x_minus_position = null
+x_plus_position = null
+y_minus_position = null
+y_plus_position = null
+z_minus_position = null
+z_plus_position = null
+hollow_mode/x_minus_margin = null
+hollow_mode/x_plus_margin = null
+hollow_mode/y_minus_margin = null
+hollow_mode/y_plus_margin = null
+hollow_mode/z_minus_margin = null
+hollow_mode/z_plus_margin = null
+
+[node name="PrisonLight" type="MeshInstance" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Prison_CellRoom2"]
+transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -4.71916, 9.23437, -12.8099 )
+mesh = ExtResource( 12 )
+material/0 = null
+
+[node name="SpotLight" type="SpotLight" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Prison_CellRoom2/PrisonLight"]
+transform = Transform( 3.96825, 0, 0, 0, -1.48663e-07, 3.40101, 0, -2.38095, -1.04075e-07, 0, -0.175251, 0 )
+light_energy = 5.0
+shadow_enabled = true
+spot_range = 11.5392
+spot_angle = 70.1507
+
+[node name="PrisonLight2" type="MeshInstance" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Prison_CellRoom2"]
+transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 2.89557, 9.23437, -12.8099 )
+mesh = ExtResource( 12 )
+material/0 = null
+
+[node name="SpotLight" type="SpotLight" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Prison_CellRoom2/PrisonLight2"]
+transform = Transform( 3.96825, 0, 0, 0, -1.48663e-07, 3.40101, 0, -2.38095, -1.04075e-07, 0, -0.175251, 0 )
+light_energy = 5.0
+shadow_enabled = true
+spot_range = 11.5392
+spot_angle = 70.1507
+
+[node name="PrisonLight3" type="MeshInstance" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Prison_CellRoom2"]
+transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -0.140784, 9.23437, 0.0504742 )
+mesh = ExtResource( 12 )
+material/0 = null
+
+[node name="SpotLight" type="SpotLight" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Prison_CellRoom2/PrisonLight3"]
+transform = Transform( 3.96825, 0, 0, 0, -1.48663e-07, 3.40101, 0, -2.38095, -1.04075e-07, 0, -0.175251, 0 )
+light_energy = 5.0
+shadow_enabled = true
+spot_range = 11.5392
+spot_angle = 70.1507
+
+[node name="Cell" type="CSGMesh" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner"]
+transform = Transform( 0.177889, 0, 0, 0, 0.293433, 0, 0, 0, 0.241159, -11.6113, -0.016214, 6.2827 )
+use_collision = true
+invert_faces = true
+mesh = ExtResource( 7 )
+script = ExtResource( 8 )
+shape_type = 0
+uv_options/uv_scale = Vector2( 1, 1 )
+uv_options/flip_uvs_horizontally = false
+uv_options/flip_uvs_vertically = false
+hollow_mode/enable_hollow_mode = false
+hollow_mode/hollow_material = null
+hollow_mode/hollow_mesh = null
+hollow_last_position = Vector3( 0, 0, 0 )
+_gen_property_list = [ {
+"hint": 3,
+"hint_string": "Center, Base, Bottom Corner",
+"name": "origin_mode",
+"private_name": "origin_mode",
+"type": 2,
+"usage": 3
+}, {
+"hint": 3,
+"hint_string": "Proportional Overlap, Per-Face Mapping",
+"name": "uv_options/unwrap_method",
+"private_name": "unwrap_method",
+"type": 2,
+"usage": 3
+}, {
+"hint": 3,
+"name": "x_minus_position",
+"private_name": "x_minus_position",
+"type": 3
+}, {
+"hint": 3,
+"name": "x_plus_position",
+"private_name": "x_plus_position",
+"type": 3
+}, {
+"hint": 3,
+"name": "y_minus_position",
+"private_name": "y_minus_position",
+"type": 3
+}, {
+"hint": 3,
+"name": "y_plus_position",
+"private_name": "y_plus_position",
+"type": 3
+}, {
+"hint": 3,
+"name": "z_minus_position",
+"private_name": "z_minus_position",
+"type": 3
+}, {
+"hint": 3,
+"name": "z_plus_position",
+"private_name": "z_plus_position",
+"type": 3
+}, {
+"hint": 3,
+"name": "hollow_mode/x_minus_margin",
+"private_name": "_x_minus_hollow",
+"type": 3
+}, {
+"hint": 3,
+"name": "hollow_mode/x_plus_margin",
+"private_name": "_x_plus_hollow",
+"type": 3
+}, {
+"hint": 3,
+"name": "hollow_mode/y_minus_margin",
+"private_name": "_y_minus_hollow",
+"type": 3
+}, {
+"hint": 3,
+"name": "hollow_mode/y_plus_margin",
+"private_name": "_y_plus_hollow",
+"type": 3
+}, {
+"hint": 3,
+"name": "hollow_mode/z_minus_margin",
+"private_name": "_z_minus_hollow",
+"type": 3
+}, {
+"hint": 3,
+"name": "hollow_mode/z_plus_margin",
+"private_name": "_z_plus_hollow",
+"type": 3
+} ]
+origin_mode = null
+uv_options/unwrap_method = null
+x_minus_position = null
+x_plus_position = null
+y_minus_position = null
+y_plus_position = null
+z_minus_position = null
+z_plus_position = null
+hollow_mode/x_minus_margin = null
+hollow_mode/x_plus_margin = null
+hollow_mode/y_minus_margin = null
+hollow_mode/y_plus_margin = null
+hollow_mode/z_minus_margin = null
+hollow_mode/z_plus_margin = null
+
+[node name="Window" type="CSGBox" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Cell"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10.6901, 7.09507, 0 )
+operation = 2
+height = 2.05176
+depth = 6.33284
+
+[node name="PrisonDoor" type="MeshInstance" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Cell"]
+transform = Transform( -4.57027e-08, 0, 0.280521, 0, 0.295142, 0, -0.451523, 0, -7.35624e-08, 9.0159, 0.137481, 0.0850048 )
+mesh = ExtResource( 3 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Cell/PrisonDoor"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Cell/PrisonDoor/StaticBody"]
+transform = Transform( 1, 0, -2.84217e-14, 0, 1, 0, -1.42109e-14, 0, 1, 0, 14.2371, 0 )
+shape = SubResource( 4 )
+
+[node name="Audio" type="AudioStreamPlayer3D" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Cell/PrisonDoor"]
+stream = ExtResource( 19 )
+unit_size = 4.0
+
+[node name="PrisonDoor2" type="MeshInstance" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Cell"]
+transform = Transform( -2.49565e-08, 0, 0.153182, 0, 0.142405, 0, -0.224021, 0, -3.64976e-08, -10.1449, 4.49889, 0.0850029 )
+mesh = ExtResource( 3 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Cell/PrisonDoor2"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Cell/PrisonDoor2/StaticBody"]
+transform = Transform( 1, 0, -2.84217e-14, 0, 1, 0, -1.42109e-14, 0, 1, 0, 14.2371, 0 )
+shape = SubResource( 4 )
+
+[node name="toilet" type="MeshInstance" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Cell"]
+transform = Transform( -1.62921e-08, 0, 0.19, 0, 0.08, 0, -0.1, 0, -3.09549e-08, -6.27382, -0.111434, -5.70459 )
+mesh = ExtResource( 1 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Cell/toilet"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Cell/toilet/StaticBody"]
+shape = SubResource( 5 )
+
+[node name="sink" type="MeshInstance" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Cell"]
+transform = Transform( -2.44381e-08, 0, 0.15, 0, 0.15, 0, -0.15, 0, -2.44381e-08, -0.621048, 0.0365441, -6.40519 )
+mesh = ExtResource( 4 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Cell/sink"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Cell/sink/StaticBody"]
+shape = SubResource( 6 )
+
+[node name="bathroom_carpet" type="MeshInstance" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Cell"]
+transform = Transform( 0.5, 0, 0, 0, 0.01, 0, 0, 0, 0.5, -0.671043, 0, 0 )
+mesh = ExtResource( 5 )
+material/0 = null
+
+[node name="PrisonBed" type="MeshInstance" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Cell"]
+transform = Transform( -3.25841e-08, 0, 0.4, 0, 0.3, 0, -0.2, 0, -6.51683e-08, 0.640236, 0.092324, 5.15673 )
+mesh = ExtResource( 9 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Cell/PrisonBed"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Cell/PrisonBed/StaticBody"]
+transform = Transform( 1, 0, -5.68434e-14, 0, 1, 0, 0, 0, 1, 0, 1.37085, 0 )
+shape = SubResource( 7 )
+
+[node name="Vent_Interaction" type="RigidBody" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Cell"]
+transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, -0.00501251, 7.71163, 7.41142 )
+mass = 5.0
+axis_lock_linear_x = true
+axis_lock_linear_y = true
+axis_lock_linear_z = true
+script = ExtResource( 17 )
+name = "Vent"
+destoryOnUse = false
+
+[node name="Area" type="Area" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Cell/Vent_Interaction"]
+transform = Transform( 0.03, 0, 0, 0, -1.31134e-09, -0.03, 0, 0.03, -1.31134e-09, 0, 0, 0 )
+space_override = 1
+
+[node name="CollisionShape" type="CollisionShape" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Cell/Vent_Interaction/Area"]
+shape = SubResource( 11 )
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Cell/Vent_Interaction"]
+stream = ExtResource( 18 )
+unit_size = 2.0
+
+[node name="Vent" type="CSGBox" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Cell"]
+transform = Transform( 1.92588, 0, 0, 0, 1, 0, 0, 0, 0.305426, 0, 7.58811, 7.65189 )
+
+[node name="CSGBox" type="CSGBox" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Cell/Vent"]
+transform = Transform( 0.10917, 0, 0, 0, 0.102597, 0, 0, 0, 0.1, -0.0166321, 0.0276527, 3.61235 )
+invert_faces = true
+width = 19.7754
+height = 20.8666
+depth = 77.8723
+material = SubResource( 8 )
+
+[node name="VentCover" type="MeshInstance" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Cell/Vent"]
+transform = Transform( 0.10917, 0, 0, 0, 0.102597, 0, 0, 0, 0.1, -0.0053978, -0.954844, -0.298714 )
+mesh = ExtResource( 14 )
+material/0 = null
+
+[node name="Cell2" type="CSGMesh" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner"]
+transform = Transform( 0.177889, 0, 0, 0, 0.293433, 0, 0, 0, 0.241159, -11.6113, -0.016214, -1.7173 )
+use_collision = true
+invert_faces = true
+mesh = ExtResource( 7 )
+script = ExtResource( 8 )
+shape_type = 0
+uv_options/uv_scale = Vector2( 1, 1 )
+uv_options/flip_uvs_horizontally = false
+uv_options/flip_uvs_vertically = false
+hollow_mode/enable_hollow_mode = false
+hollow_mode/hollow_material = null
+hollow_mode/hollow_mesh = null
+hollow_last_position = Vector3( 0, 0, 0 )
+_gen_property_list = [ {
+"hint": 3,
+"hint_string": "Center, Base, Bottom Corner",
+"name": "origin_mode",
+"private_name": "origin_mode",
+"type": 2,
+"usage": 3
+}, {
+"hint": 3,
+"hint_string": "Proportional Overlap, Per-Face Mapping",
+"name": "uv_options/unwrap_method",
+"private_name": "unwrap_method",
+"type": 2,
+"usage": 3
+}, {
+"hint": 3,
+"name": "x_minus_position",
+"private_name": "x_minus_position",
+"type": 3
+}, {
+"hint": 3,
+"name": "x_plus_position",
+"private_name": "x_plus_position",
+"type": 3
+}, {
+"hint": 3,
+"name": "y_minus_position",
+"private_name": "y_minus_position",
+"type": 3
+}, {
+"hint": 3,
+"name": "y_plus_position",
+"private_name": "y_plus_position",
+"type": 3
+}, {
+"hint": 3,
+"name": "z_minus_position",
+"private_name": "z_minus_position",
+"type": 3
+}, {
+"hint": 3,
+"name": "z_plus_position",
+"private_name": "z_plus_position",
+"type": 3
+}, {
+"hint": 3,
+"name": "hollow_mode/x_minus_margin",
+"private_name": "_x_minus_hollow",
+"type": 3
+}, {
+"hint": 3,
+"name": "hollow_mode/x_plus_margin",
+"private_name": "_x_plus_hollow",
+"type": 3
+}, {
+"hint": 3,
+"name": "hollow_mode/y_minus_margin",
+"private_name": "_y_minus_hollow",
+"type": 3
+}, {
+"hint": 3,
+"name": "hollow_mode/y_plus_margin",
+"private_name": "_y_plus_hollow",
+"type": 3
+}, {
+"hint": 3,
+"name": "hollow_mode/z_minus_margin",
+"private_name": "_z_minus_hollow",
+"type": 3
+}, {
+"hint": 3,
+"name": "hollow_mode/z_plus_margin",
+"private_name": "_z_plus_hollow",
+"type": 3
+} ]
+origin_mode = null
+uv_options/unwrap_method = null
+x_minus_position = null
+x_plus_position = null
+y_minus_position = null
+y_plus_position = null
+z_minus_position = null
+z_plus_position = null
+hollow_mode/x_minus_margin = null
+hollow_mode/x_plus_margin = null
+hollow_mode/y_minus_margin = null
+hollow_mode/y_plus_margin = null
+hollow_mode/z_minus_margin = null
+hollow_mode/z_plus_margin = null
+
+[node name="Window" type="CSGBox" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Cell2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10.6901, 7.09507, 0 )
+operation = 2
+height = 2.05176
+depth = 6.33284
+
+[node name="PrisonDoor" type="MeshInstance" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Cell2"]
+transform = Transform( -4.57027e-08, 0, 0.280521, 0, 0.295142, 0, -0.451523, 0, -7.35624e-08, 9.0159, 0.137481, 0.0850029 )
+mesh = ExtResource( 3 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Cell2/PrisonDoor"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Cell2/PrisonDoor/StaticBody"]
+transform = Transform( 1, 0, -2.84217e-14, 0, 1, 0, -1.42109e-14, 0, 1, 0, 14.2371, 0 )
+shape = SubResource( 4 )
+
+[node name="PrisonDoor2" type="MeshInstance" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Cell2"]
+transform = Transform( -2.49565e-08, 0, 0.153182, 0, 0.142405, 0, -0.224021, 0, -3.64976e-08, -10.1449, 4.49889, 0.0850029 )
+mesh = ExtResource( 3 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Cell2/PrisonDoor2"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Cell2/PrisonDoor2/StaticBody"]
+transform = Transform( 1, 0, -2.84217e-14, 0, 1, 0, -1.42109e-14, 0, 1, 0, 14.2371, 0 )
+shape = SubResource( 4 )
+
+[node name="toilet" type="MeshInstance" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Cell2"]
+transform = Transform( -1.62921e-08, 0, 0.19, 0, 0.08, 0, -0.1, 0, -3.09549e-08, -6.27382, -0.111434, -5.70459 )
+mesh = ExtResource( 1 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Cell2/toilet"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Cell2/toilet/StaticBody"]
+shape = SubResource( 5 )
+
+[node name="sink" type="MeshInstance" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Cell2"]
+transform = Transform( -2.44381e-08, 0, 0.15, 0, 0.15, 0, -0.15, 0, -2.44381e-08, -0.621048, 0.0365441, -6.40519 )
+mesh = ExtResource( 4 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Cell2/sink"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Cell2/sink/StaticBody"]
+shape = SubResource( 6 )
+
+[node name="bathroom_carpet" type="MeshInstance" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Cell2"]
+transform = Transform( 0.5, 0, 0, 0, 0.01, 0, 0, 0, 0.5, -0.671043, 0, 0 )
+mesh = ExtResource( 5 )
+material/0 = null
+
+[node name="PrisonBed" type="MeshInstance" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Cell2"]
+transform = Transform( -3.25841e-08, 0, 0.4, 0, 0.3, 0, -0.2, 0, -6.51683e-08, 0.640236, 0.092324, 5.15673 )
+mesh = ExtResource( 9 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Cell2/PrisonBed"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Cell2/PrisonBed/StaticBody"]
+transform = Transform( 1, 0, -5.68434e-14, 0, 1, 0, 0, 0, 1, 0, 1.37085, 0 )
+shape = SubResource( 7 )
+
+[node name="Cell3" type="CSGMesh" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner"]
+transform = Transform( -7.77578e-09, 0, -0.241159, 0, 0.293433, 0, 0.177889, 0, -1.05414e-08, -7.18779, -0.016214, -6.94516 )
+use_collision = true
+invert_faces = true
+mesh = ExtResource( 7 )
+script = ExtResource( 8 )
+shape_type = 0
+uv_options/uv_scale = Vector2( 1, 1 )
+uv_options/flip_uvs_horizontally = false
+uv_options/flip_uvs_vertically = false
+hollow_mode/enable_hollow_mode = false
+hollow_mode/hollow_material = null
+hollow_mode/hollow_mesh = null
+hollow_last_position = Vector3( 0, 0, 0 )
+_gen_property_list = [ {
+"hint": 3,
+"hint_string": "Center, Base, Bottom Corner",
+"name": "origin_mode",
+"private_name": "origin_mode",
+"type": 2,
+"usage": 3
+}, {
+"hint": 3,
+"hint_string": "Proportional Overlap, Per-Face Mapping",
+"name": "uv_options/unwrap_method",
+"private_name": "unwrap_method",
+"type": 2,
+"usage": 3
+}, {
+"hint": 3,
+"name": "x_minus_position",
+"private_name": "x_minus_position",
+"type": 3
+}, {
+"hint": 3,
+"name": "x_plus_position",
+"private_name": "x_plus_position",
+"type": 3
+}, {
+"hint": 3,
+"name": "y_minus_position",
+"private_name": "y_minus_position",
+"type": 3
+}, {
+"hint": 3,
+"name": "y_plus_position",
+"private_name": "y_plus_position",
+"type": 3
+}, {
+"hint": 3,
+"name": "z_minus_position",
+"private_name": "z_minus_position",
+"type": 3
+}, {
+"hint": 3,
+"name": "z_plus_position",
+"private_name": "z_plus_position",
+"type": 3
+}, {
+"hint": 3,
+"name": "hollow_mode/x_minus_margin",
+"private_name": "_x_minus_hollow",
+"type": 3
+}, {
+"hint": 3,
+"name": "hollow_mode/x_plus_margin",
+"private_name": "_x_plus_hollow",
+"type": 3
+}, {
+"hint": 3,
+"name": "hollow_mode/y_minus_margin",
+"private_name": "_y_minus_hollow",
+"type": 3
+}, {
+"hint": 3,
+"name": "hollow_mode/y_plus_margin",
+"private_name": "_y_plus_hollow",
+"type": 3
+}, {
+"hint": 3,
+"name": "hollow_mode/z_minus_margin",
+"private_name": "_z_minus_hollow",
+"type": 3
+}, {
+"hint": 3,
+"name": "hollow_mode/z_plus_margin",
+"private_name": "_z_plus_hollow",
+"type": 3
+} ]
+origin_mode = null
+uv_options/unwrap_method = null
+x_minus_position = null
+x_plus_position = null
+y_minus_position = null
+y_plus_position = null
+z_minus_position = null
+z_plus_position = null
+hollow_mode/x_minus_margin = null
+hollow_mode/x_plus_margin = null
+hollow_mode/y_minus_margin = null
+hollow_mode/y_plus_margin = null
+hollow_mode/z_minus_margin = null
+hollow_mode/z_plus_margin = null
+
+[node name="Window" type="CSGBox" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Cell3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10.6901, 7.09507, 0 )
+operation = 2
+height = 2.05176
+depth = 6.33284
+
+[node name="PrisonDoor" type="MeshInstance" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Cell3"]
+transform = Transform( -4.57027e-08, 0, 0.280521, 0, 0.295142, 0, -0.451523, 0, -7.35624e-08, 9.0159, 0.137481, 0.0850029 )
+mesh = ExtResource( 3 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Cell3/PrisonDoor"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Cell3/PrisonDoor/StaticBody"]
+transform = Transform( 1, 0, -2.84217e-14, 0, 1, 0, -1.42109e-14, 0, 1, 0, 14.2371, 0 )
+shape = SubResource( 4 )
+
+[node name="PrisonDoor2" type="MeshInstance" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Cell3"]
+transform = Transform( -2.49565e-08, 0, 0.153182, 0, 0.142405, 0, -0.224021, 0, -3.64976e-08, -10.1449, 4.49889, 0.0850029 )
+mesh = ExtResource( 3 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Cell3/PrisonDoor2"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Cell3/PrisonDoor2/StaticBody"]
+transform = Transform( 1, 0, -2.84217e-14, 0, 1, 0, -1.42109e-14, 0, 1, 0, 14.2371, 0 )
+shape = SubResource( 4 )
+
+[node name="toilet" type="MeshInstance" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Cell3"]
+transform = Transform( -1.62921e-08, 0, 0.19, 0, 0.08, 0, -0.1, 0, -3.09549e-08, -6.27382, -0.111434, -5.70459 )
+mesh = ExtResource( 1 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Cell3/toilet"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Cell3/toilet/StaticBody"]
+shape = SubResource( 5 )
+
+[node name="sink" type="MeshInstance" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Cell3"]
+transform = Transform( -2.44381e-08, 0, 0.15, 0, 0.15, 0, -0.15, 0, -2.44381e-08, -0.621048, 0.0365441, -6.40519 )
+mesh = ExtResource( 4 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Cell3/sink"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Cell3/sink/StaticBody"]
+shape = SubResource( 6 )
+
+[node name="bathroom_carpet" type="MeshInstance" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Cell3"]
+transform = Transform( 0.5, 0, 0, 0, 0.01, 0, 0, 0, 0.5, -0.671043, 0, 0 )
+mesh = ExtResource( 5 )
+material/0 = null
+
+[node name="PrisonBed" type="MeshInstance" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Cell3"]
+transform = Transform( -3.25841e-08, 0, 0.4, 0, 0.3, 0, -0.2, 0, -6.51683e-08, 0.640236, 0.092324, 5.15673 )
+mesh = ExtResource( 9 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Cell3/PrisonBed"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Cell3/PrisonBed/StaticBody"]
+transform = Transform( 1, 0, -5.68434e-14, 0, 1, 0, 0, 0, 1, 0, 1.37085, 0 )
+shape = SubResource( 7 )
+
+[node name="Cell4" type="CSGMesh" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner"]
+transform = Transform( -7.77578e-09, 0, -0.241159, 0, 0.293433, 0, 0.177889, 0, -1.05414e-08, -0.259495, -0.016214, -6.94516 )
+use_collision = true
+invert_faces = true
+mesh = ExtResource( 7 )
+script = ExtResource( 8 )
+shape_type = 0
+uv_options/uv_scale = Vector2( 1, 1 )
+uv_options/flip_uvs_horizontally = false
+uv_options/flip_uvs_vertically = false
+hollow_mode/enable_hollow_mode = false
+hollow_mode/hollow_material = null
+hollow_mode/hollow_mesh = null
+hollow_last_position = Vector3( 0, 0, 0 )
+_gen_property_list = [ {
+"hint": 3,
+"hint_string": "Center, Base, Bottom Corner",
+"name": "origin_mode",
+"private_name": "origin_mode",
+"type": 2,
+"usage": 3
+}, {
+"hint": 3,
+"hint_string": "Proportional Overlap, Per-Face Mapping",
+"name": "uv_options/unwrap_method",
+"private_name": "unwrap_method",
+"type": 2,
+"usage": 3
+}, {
+"hint": 3,
+"name": "x_minus_position",
+"private_name": "x_minus_position",
+"type": 3
+}, {
+"hint": 3,
+"name": "x_plus_position",
+"private_name": "x_plus_position",
+"type": 3
+}, {
+"hint": 3,
+"name": "y_minus_position",
+"private_name": "y_minus_position",
+"type": 3
+}, {
+"hint": 3,
+"name": "y_plus_position",
+"private_name": "y_plus_position",
+"type": 3
+}, {
+"hint": 3,
+"name": "z_minus_position",
+"private_name": "z_minus_position",
+"type": 3
+}, {
+"hint": 3,
+"name": "z_plus_position",
+"private_name": "z_plus_position",
+"type": 3
+}, {
+"hint": 3,
+"name": "hollow_mode/x_minus_margin",
+"private_name": "_x_minus_hollow",
+"type": 3
+}, {
+"hint": 3,
+"name": "hollow_mode/x_plus_margin",
+"private_name": "_x_plus_hollow",
+"type": 3
+}, {
+"hint": 3,
+"name": "hollow_mode/y_minus_margin",
+"private_name": "_y_minus_hollow",
+"type": 3
+}, {
+"hint": 3,
+"name": "hollow_mode/y_plus_margin",
+"private_name": "_y_plus_hollow",
+"type": 3
+}, {
+"hint": 3,
+"name": "hollow_mode/z_minus_margin",
+"private_name": "_z_minus_hollow",
+"type": 3
+}, {
+"hint": 3,
+"name": "hollow_mode/z_plus_margin",
+"private_name": "_z_plus_hollow",
+"type": 3
+} ]
+origin_mode = null
+uv_options/unwrap_method = null
+x_minus_position = null
+x_plus_position = null
+y_minus_position = null
+y_plus_position = null
+z_minus_position = null
+z_plus_position = null
+hollow_mode/x_minus_margin = null
+hollow_mode/x_plus_margin = null
+hollow_mode/y_minus_margin = null
+hollow_mode/y_plus_margin = null
+hollow_mode/z_minus_margin = null
+hollow_mode/z_plus_margin = null
+
+[node name="Window" type="CSGBox" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Cell4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10.6901, 7.09507, 0 )
+operation = 2
+height = 2.05176
+depth = 6.33284
+
+[node name="PrisonDoor" type="MeshInstance" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Cell4"]
+transform = Transform( -4.57027e-08, 0, 0.280521, 0, 0.295142, 0, -0.451523, 0, -7.35624e-08, 9.0159, 0.137481, 0.0850029 )
+mesh = ExtResource( 3 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Cell4/PrisonDoor"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Cell4/PrisonDoor/StaticBody"]
+transform = Transform( 1, 0, -2.84217e-14, 0, 1, 0, -1.42109e-14, 0, 1, 0, 14.2371, 0 )
+shape = SubResource( 4 )
+
+[node name="PrisonDoor2" type="MeshInstance" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Cell4"]
+transform = Transform( -2.49565e-08, 0, 0.153182, 0, 0.142405, 0, -0.224021, 0, -3.64976e-08, -10.1449, 4.49889, 0.0850029 )
+mesh = ExtResource( 3 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Cell4/PrisonDoor2"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Cell4/PrisonDoor2/StaticBody"]
+transform = Transform( 1, 0, -2.84217e-14, 0, 1, 0, -1.42109e-14, 0, 1, 0, 14.2371, 0 )
+shape = SubResource( 4 )
+
+[node name="toilet" type="MeshInstance" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Cell4"]
+transform = Transform( -1.62921e-08, 0, 0.19, 0, 0.08, 0, -0.1, 0, -3.09549e-08, -6.27382, -0.111434, -5.70459 )
+mesh = ExtResource( 1 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Cell4/toilet"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Cell4/toilet/StaticBody"]
+shape = SubResource( 5 )
+
+[node name="sink" type="MeshInstance" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Cell4"]
+transform = Transform( -2.44381e-08, 0, 0.15, 0, 0.15, 0, -0.15, 0, -2.44381e-08, -0.621048, 0.0365441, -6.40519 )
+mesh = ExtResource( 4 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Cell4/sink"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Cell4/sink/StaticBody"]
+shape = SubResource( 6 )
+
+[node name="bathroom_carpet" type="MeshInstance" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Cell4"]
+transform = Transform( 0.5, 0, 0, 0, 0.01, 0, 0, 0, 0.5, -0.671043, 0, 0 )
+mesh = ExtResource( 5 )
+material/0 = null
+
+[node name="PrisonBed" type="MeshInstance" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Cell4"]
+transform = Transform( -3.25841e-08, 0, 0.4, 0, 0.3, 0, -0.2, 0, -6.51683e-08, 0.640236, 0.092324, 5.15673 )
+mesh = ExtResource( 9 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Cell4/PrisonBed"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Cell4/PrisonBed/StaticBody"]
+transform = Transform( 1, 0, -5.68434e-14, 0, 1, 0, 0, 0, 1, 0, 1.37085, 0 )
+shape = SubResource( 7 )
+
+[node name="Cell5" type="CSGMesh" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner"]
+transform = Transform( -7.77578e-09, 0, -0.241159, 0, 0.293433, 0, 0.177889, 0, -1.05414e-08, 6.48135, -0.016214, -6.94516 )
+use_collision = true
+invert_faces = true
+mesh = ExtResource( 7 )
+script = ExtResource( 8 )
+shape_type = 0
+uv_options/uv_scale = Vector2( 1, 1 )
+uv_options/flip_uvs_horizontally = false
+uv_options/flip_uvs_vertically = false
+hollow_mode/enable_hollow_mode = false
+hollow_mode/hollow_material = null
+hollow_mode/hollow_mesh = null
+hollow_last_position = Vector3( 0, 0, 0 )
+_gen_property_list = [ {
+"hint": 3,
+"hint_string": "Center, Base, Bottom Corner",
+"name": "origin_mode",
+"private_name": "origin_mode",
+"type": 2,
+"usage": 3
+}, {
+"hint": 3,
+"hint_string": "Proportional Overlap, Per-Face Mapping",
+"name": "uv_options/unwrap_method",
+"private_name": "unwrap_method",
+"type": 2,
+"usage": 3
+}, {
+"hint": 3,
+"name": "x_minus_position",
+"private_name": "x_minus_position",
+"type": 3
+}, {
+"hint": 3,
+"name": "x_plus_position",
+"private_name": "x_plus_position",
+"type": 3
+}, {
+"hint": 3,
+"name": "y_minus_position",
+"private_name": "y_minus_position",
+"type": 3
+}, {
+"hint": 3,
+"name": "y_plus_position",
+"private_name": "y_plus_position",
+"type": 3
+}, {
+"hint": 3,
+"name": "z_minus_position",
+"private_name": "z_minus_position",
+"type": 3
+}, {
+"hint": 3,
+"name": "z_plus_position",
+"private_name": "z_plus_position",
+"type": 3
+}, {
+"hint": 3,
+"name": "hollow_mode/x_minus_margin",
+"private_name": "_x_minus_hollow",
+"type": 3
+}, {
+"hint": 3,
+"name": "hollow_mode/x_plus_margin",
+"private_name": "_x_plus_hollow",
+"type": 3
+}, {
+"hint": 3,
+"name": "hollow_mode/y_minus_margin",
+"private_name": "_y_minus_hollow",
+"type": 3
+}, {
+"hint": 3,
+"name": "hollow_mode/y_plus_margin",
+"private_name": "_y_plus_hollow",
+"type": 3
+}, {
+"hint": 3,
+"name": "hollow_mode/z_minus_margin",
+"private_name": "_z_minus_hollow",
+"type": 3
+}, {
+"hint": 3,
+"name": "hollow_mode/z_plus_margin",
+"private_name": "_z_plus_hollow",
+"type": 3
+} ]
+origin_mode = null
+uv_options/unwrap_method = null
+x_minus_position = null
+x_plus_position = null
+y_minus_position = null
+y_plus_position = null
+z_minus_position = null
+z_plus_position = null
+hollow_mode/x_minus_margin = null
+hollow_mode/x_plus_margin = null
+hollow_mode/y_minus_margin = null
+hollow_mode/y_plus_margin = null
+hollow_mode/z_minus_margin = null
+hollow_mode/z_plus_margin = null
+
+[node name="Window" type="CSGBox" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Cell5"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10.6901, 7.09507, 0 )
+operation = 2
+height = 2.05176
+depth = 6.33284
+
+[node name="PrisonDoor" type="MeshInstance" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Cell5"]
+transform = Transform( -4.57027e-08, 0, 0.280521, 0, 0.295142, 0, -0.451523, 0, -7.35624e-08, 9.0159, 0.137481, 0.0850029 )
+mesh = ExtResource( 3 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Cell5/PrisonDoor"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Cell5/PrisonDoor/StaticBody"]
+transform = Transform( 1, 0, -2.84217e-14, 0, 1, 0, -1.42109e-14, 0, 1, 0, 14.2371, 0 )
+shape = SubResource( 4 )
+
+[node name="PrisonDoor2" type="MeshInstance" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Cell5"]
+transform = Transform( -2.49565e-08, 0, 0.153182, 0, 0.142405, 0, -0.224021, 0, -3.64976e-08, -10.1449, 4.49889, 0.0850029 )
+mesh = ExtResource( 3 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Cell5/PrisonDoor2"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Cell5/PrisonDoor2/StaticBody"]
+transform = Transform( 1, 0, -2.84217e-14, 0, 1, 0, -1.42109e-14, 0, 1, 0, 14.2371, 0 )
+shape = SubResource( 4 )
+
+[node name="toilet" type="MeshInstance" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Cell5"]
+transform = Transform( -1.62921e-08, 0, 0.19, 0, 0.08, 0, -0.1, 0, -3.09549e-08, -6.27382, -0.111434, -5.70459 )
+mesh = ExtResource( 1 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Cell5/toilet"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Cell5/toilet/StaticBody"]
+shape = SubResource( 5 )
+
+[node name="sink" type="MeshInstance" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Cell5"]
+transform = Transform( -2.44381e-08, 0, 0.15, 0, 0.15, 0, -0.15, 0, -2.44381e-08, -0.621048, 0.0365441, -6.40519 )
+mesh = ExtResource( 4 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Cell5/sink"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Cell5/sink/StaticBody"]
+shape = SubResource( 6 )
+
+[node name="bathroom_carpet" type="MeshInstance" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Cell5"]
+transform = Transform( 0.5, 0, 0, 0, 0.01, 0, 0, 0, 0.5, -0.671043, 0, 0 )
+mesh = ExtResource( 5 )
+material/0 = null
+
+[node name="PrisonBed" type="MeshInstance" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Cell5"]
+transform = Transform( -3.25841e-08, 0, 0.4, 0, 0.3, 0, -0.2, 0, -6.51683e-08, 0.640236, 0.092324, 5.15673 )
+mesh = ExtResource( 9 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Cell5/PrisonBed"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Cell5/PrisonBed/StaticBody"]
+transform = Transform( 1, 0, -5.68434e-14, 0, 1, 0, 0, 0, 1, 0, 1.37085, 0 )
+shape = SubResource( 7 )
+
+[node name="Cell6" type="CSGMesh" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner"]
+transform = Transform( -0.177889, 0, -2.10828e-08, 0, 0.293433, 0, 1.55516e-08, 0, -0.241159, 11.1631, -0.016214, -1.7173 )
+use_collision = true
+invert_faces = true
+mesh = ExtResource( 7 )
+script = ExtResource( 8 )
+shape_type = 0
+uv_options/uv_scale = Vector2( 1, 1 )
+uv_options/flip_uvs_horizontally = false
+uv_options/flip_uvs_vertically = false
+hollow_mode/enable_hollow_mode = false
+hollow_mode/hollow_material = null
+hollow_mode/hollow_mesh = null
+hollow_last_position = Vector3( 0, 0, 0 )
+_gen_property_list = [ {
+"hint": 3,
+"hint_string": "Center, Base, Bottom Corner",
+"name": "origin_mode",
+"private_name": "origin_mode",
+"type": 2,
+"usage": 3
+}, {
+"hint": 3,
+"hint_string": "Proportional Overlap, Per-Face Mapping",
+"name": "uv_options/unwrap_method",
+"private_name": "unwrap_method",
+"type": 2,
+"usage": 3
+}, {
+"hint": 3,
+"name": "x_minus_position",
+"private_name": "x_minus_position",
+"type": 3
+}, {
+"hint": 3,
+"name": "x_plus_position",
+"private_name": "x_plus_position",
+"type": 3
+}, {
+"hint": 3,
+"name": "y_minus_position",
+"private_name": "y_minus_position",
+"type": 3
+}, {
+"hint": 3,
+"name": "y_plus_position",
+"private_name": "y_plus_position",
+"type": 3
+}, {
+"hint": 3,
+"name": "z_minus_position",
+"private_name": "z_minus_position",
+"type": 3
+}, {
+"hint": 3,
+"name": "z_plus_position",
+"private_name": "z_plus_position",
+"type": 3
+}, {
+"hint": 3,
+"name": "hollow_mode/x_minus_margin",
+"private_name": "_x_minus_hollow",
+"type": 3
+}, {
+"hint": 3,
+"name": "hollow_mode/x_plus_margin",
+"private_name": "_x_plus_hollow",
+"type": 3
+}, {
+"hint": 3,
+"name": "hollow_mode/y_minus_margin",
+"private_name": "_y_minus_hollow",
+"type": 3
+}, {
+"hint": 3,
+"name": "hollow_mode/y_plus_margin",
+"private_name": "_y_plus_hollow",
+"type": 3
+}, {
+"hint": 3,
+"name": "hollow_mode/z_minus_margin",
+"private_name": "_z_minus_hollow",
+"type": 3
+}, {
+"hint": 3,
+"name": "hollow_mode/z_plus_margin",
+"private_name": "_z_plus_hollow",
+"type": 3
+} ]
+origin_mode = null
+uv_options/unwrap_method = null
+x_minus_position = null
+x_plus_position = null
+y_minus_position = null
+y_plus_position = null
+z_minus_position = null
+z_plus_position = null
+hollow_mode/x_minus_margin = null
+hollow_mode/x_plus_margin = null
+hollow_mode/y_minus_margin = null
+hollow_mode/y_plus_margin = null
+hollow_mode/z_minus_margin = null
+hollow_mode/z_plus_margin = null
+
+[node name="Window" type="CSGBox" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Cell6"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10.6901, 7.09507, 0 )
+operation = 2
+height = 2.05176
+depth = 6.33284
+
+[node name="PrisonDoor" type="MeshInstance" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Cell6"]
+transform = Transform( -4.57027e-08, 0, 0.280521, 0, 0.295142, 0, -0.451523, 0, -7.35624e-08, 9.0159, 0.137481, 0.0850029 )
+mesh = ExtResource( 3 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Cell6/PrisonDoor"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Cell6/PrisonDoor/StaticBody"]
+transform = Transform( 1, 0, -2.84217e-14, 0, 1, 0, -1.42109e-14, 0, 1, 0, 14.2371, 0 )
+shape = SubResource( 4 )
+
+[node name="PrisonDoor2" type="MeshInstance" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Cell6"]
+transform = Transform( -2.49565e-08, 0, 0.153182, 0, 0.142405, 0, -0.224021, 0, -3.64976e-08, -10.1449, 4.49889, 0.0850029 )
+mesh = ExtResource( 3 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Cell6/PrisonDoor2"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Cell6/PrisonDoor2/StaticBody"]
+transform = Transform( 1, 0, -2.84217e-14, 0, 1, 0, -1.42109e-14, 0, 1, 0, 14.2371, 0 )
+shape = SubResource( 4 )
+
+[node name="toilet" type="MeshInstance" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Cell6"]
+transform = Transform( -1.62921e-08, 0, 0.19, 0, 0.08, 0, -0.1, 0, -3.09549e-08, -6.27382, -0.111434, -5.70459 )
+mesh = ExtResource( 1 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Cell6/toilet"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Cell6/toilet/StaticBody"]
+shape = SubResource( 5 )
+
+[node name="sink" type="MeshInstance" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Cell6"]
+transform = Transform( -2.44381e-08, 0, 0.15, 0, 0.15, 0, -0.15, 0, -2.44381e-08, -0.621048, 0.0365441, -6.40519 )
+mesh = ExtResource( 4 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Cell6/sink"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Cell6/sink/StaticBody"]
+shape = SubResource( 6 )
+
+[node name="bathroom_carpet" type="MeshInstance" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Cell6"]
+transform = Transform( 0.5, 0, 0, 0, 0.01, 0, 0, 0, 0.5, -0.671043, 0, 0 )
+mesh = ExtResource( 5 )
+material/0 = null
+
+[node name="PrisonBed" type="MeshInstance" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Cell6"]
+transform = Transform( -3.25841e-08, 0, 0.4, 0, 0.3, 0, -0.2, 0, -6.51683e-08, 0.640236, 0.092324, 5.15673 )
+mesh = ExtResource( 9 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Cell6/PrisonBed"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Cell6/PrisonBed/StaticBody"]
+transform = Transform( 1, 0, -5.68434e-14, 0, 1, 0, 0, 0, 1, 0, 1.37085, 0 )
+shape = SubResource( 7 )
+
+[node name="Cell7" type="CSGMesh" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner"]
+transform = Transform( -0.177889, 0, -2.10828e-08, 0, 0.293433, 0, 1.55516e-08, 0, -0.241159, 11.1631, -0.016214, 6.2827 )
+use_collision = true
+invert_faces = true
+mesh = ExtResource( 7 )
+script = ExtResource( 8 )
+shape_type = 0
+uv_options/uv_scale = Vector2( 1, 1 )
+uv_options/flip_uvs_horizontally = false
+uv_options/flip_uvs_vertically = false
+hollow_mode/enable_hollow_mode = false
+hollow_mode/hollow_material = null
+hollow_mode/hollow_mesh = null
+hollow_last_position = Vector3( 0, 0, 0 )
+_gen_property_list = [ {
+"hint": 3,
+"hint_string": "Center, Base, Bottom Corner",
+"name": "origin_mode",
+"private_name": "origin_mode",
+"type": 2,
+"usage": 3
+}, {
+"hint": 3,
+"hint_string": "Proportional Overlap, Per-Face Mapping",
+"name": "uv_options/unwrap_method",
+"private_name": "unwrap_method",
+"type": 2,
+"usage": 3
+}, {
+"hint": 3,
+"name": "x_minus_position",
+"private_name": "x_minus_position",
+"type": 3
+}, {
+"hint": 3,
+"name": "x_plus_position",
+"private_name": "x_plus_position",
+"type": 3
+}, {
+"hint": 3,
+"name": "y_minus_position",
+"private_name": "y_minus_position",
+"type": 3
+}, {
+"hint": 3,
+"name": "y_plus_position",
+"private_name": "y_plus_position",
+"type": 3
+}, {
+"hint": 3,
+"name": "z_minus_position",
+"private_name": "z_minus_position",
+"type": 3
+}, {
+"hint": 3,
+"name": "z_plus_position",
+"private_name": "z_plus_position",
+"type": 3
+}, {
+"hint": 3,
+"name": "hollow_mode/x_minus_margin",
+"private_name": "_x_minus_hollow",
+"type": 3
+}, {
+"hint": 3,
+"name": "hollow_mode/x_plus_margin",
+"private_name": "_x_plus_hollow",
+"type": 3
+}, {
+"hint": 3,
+"name": "hollow_mode/y_minus_margin",
+"private_name": "_y_minus_hollow",
+"type": 3
+}, {
+"hint": 3,
+"name": "hollow_mode/y_plus_margin",
+"private_name": "_y_plus_hollow",
+"type": 3
+}, {
+"hint": 3,
+"name": "hollow_mode/z_minus_margin",
+"private_name": "_z_minus_hollow",
+"type": 3
+}, {
+"hint": 3,
+"name": "hollow_mode/z_plus_margin",
+"private_name": "_z_plus_hollow",
+"type": 3
+} ]
+origin_mode = null
+uv_options/unwrap_method = null
+x_minus_position = null
+x_plus_position = null
+y_minus_position = null
+y_plus_position = null
+z_minus_position = null
+z_plus_position = null
+hollow_mode/x_minus_margin = null
+hollow_mode/x_plus_margin = null
+hollow_mode/y_minus_margin = null
+hollow_mode/y_plus_margin = null
+hollow_mode/z_minus_margin = null
+hollow_mode/z_plus_margin = null
+
+[node name="Window" type="CSGBox" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Cell7"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10.6901, 7.09507, 0 )
+operation = 2
+height = 2.05176
+depth = 6.33284
+
+[node name="PrisonDoor" type="MeshInstance" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Cell7"]
+transform = Transform( -4.57027e-08, 0, 0.280521, 0, 0.295142, 0, -0.451523, 0, -7.35624e-08, 9.0159, 0.137481, 0.0850029 )
+mesh = ExtResource( 3 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Cell7/PrisonDoor"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Cell7/PrisonDoor/StaticBody"]
+transform = Transform( 1, 0, -2.84217e-14, 0, 1, 0, -1.42109e-14, 0, 1, 0, 14.2371, 0 )
+shape = SubResource( 4 )
+
+[node name="PrisonDoor2" type="MeshInstance" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Cell7"]
+transform = Transform( -2.49565e-08, 0, 0.153182, 0, 0.142405, 0, -0.224021, 0, -3.64976e-08, -10.1449, 4.49889, 0.0850029 )
+mesh = ExtResource( 3 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Cell7/PrisonDoor2"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Cell7/PrisonDoor2/StaticBody"]
+transform = Transform( 1, 0, -2.84217e-14, 0, 1, 0, -1.42109e-14, 0, 1, 0, 14.2371, 0 )
+shape = SubResource( 4 )
+
+[node name="toilet" type="MeshInstance" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Cell7"]
+transform = Transform( -1.62921e-08, 0, 0.19, 0, 0.08, 0, -0.1, 0, -3.09549e-08, -6.27382, -0.111434, -5.70459 )
+mesh = ExtResource( 1 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Cell7/toilet"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Cell7/toilet/StaticBody"]
+shape = SubResource( 5 )
+
+[node name="sink" type="MeshInstance" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Cell7"]
+transform = Transform( -2.44381e-08, 0, 0.15, 0, 0.15, 0, -0.15, 0, -2.44381e-08, -0.621048, 0.0365441, -6.40519 )
+mesh = ExtResource( 4 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Cell7/sink"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Cell7/sink/StaticBody"]
+shape = SubResource( 6 )
+
+[node name="bathroom_carpet" type="MeshInstance" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Cell7"]
+transform = Transform( 0.5, 0, 0, 0, 0.01, 0, 0, 0, 0.5, -0.671043, 0, 0 )
+mesh = ExtResource( 5 )
+material/0 = null
+
+[node name="PrisonBed" type="MeshInstance" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Cell7"]
+transform = Transform( -3.25841e-08, 0, 0.4, 0, 0.3, 0, -0.2, 0, -6.51683e-08, 0.640236, 0.092324, 5.15673 )
+mesh = ExtResource( 9 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Cell7/PrisonBed"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Level_Geometry/NavigationMeshInstance/CSGCombiner/Cell7/PrisonBed/StaticBody"]
+transform = Transform( 1, 0, -5.68434e-14, 0, 1, 0, 0, 0, 1, 0, 1.37085, 0 )
+shape = SubResource( 7 )
+
+[node name="Bad Agent KEY" parent="." instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.83503, 0.905275, 6.39979 )
+
+[node name="Key_Collectable" type="RigidBody" parent="."]
+transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, -9.79257, 2.15906, 6.16491 )
+visible = false
+mass = 5.0
+script = ExtResource( 17 )
+name = "Cell Key"
+canUse = false
+
+[node name="Area" type="Area" parent="Key_Collectable"]
+transform = Transform( 0.03, 0, 0, 0, -1.31134e-09, -0.03, 0, 0.03, -1.31134e-09, 0, 0, 0 )
+space_override = 1
+
+[node name="Mesh" type="MeshInstance" parent="Key_Collectable/Area"]
+mesh = ExtResource( 16 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="Key_Collectable/Area"]
+shape = SubResource( 9 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="Key_Collectable"]
+transform = Transform( 0.05, 0, 0, 0, -8.14603e-09, -0.05, 0, 0.05, -8.14603e-09, 0, 0, 0 )
+shape = SubResource( 10 )
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Key_Collectable"]
+stream = ExtResource( 18 )
+unit_size = 2.0
+
+[node name="Music Box" type="AudioStreamPlayer" parent="."]

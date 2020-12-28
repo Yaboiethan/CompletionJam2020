@@ -1,0 +1,13 @@
+[remap]
+
+importer="MagicaVoxel-Importer"
+type="Mesh"
+path="res://.import/wall_with_painting.vox-4d312ea94b1867cdea15f9cc2cf2a761.mesh"
+
+[deps]
+
+source_file="res://Assets/Voxel Assets/bathroom/wall_with_painting.vox"
+dest_files=[ "res://.import/wall_with_painting.vox-4d312ea94b1867cdea15f9cc2cf2a761.mesh" ]
+
+[params]
+

@@ -1,0 +1,13 @@
+[remap]
+
+importer="MagicaVoxel-Importer"
+type="Mesh"
+path="res://.import/toilet.vox-f1fc96105106a1d5e9a45f9315f1cfac.mesh"
+
+[deps]
+
+source_file="res://Assets/Voxel Assets/bathroom/toilet.vox"
+dest_files=[ "res://.import/toilet.vox-f1fc96105106a1d5e9a45f9315f1cfac.mesh" ]
+
+[params]
+

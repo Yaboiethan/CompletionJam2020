@@ -1,0 +1,13 @@
+[remap]
+
+importer="MagicaVoxel-Importer"
+type="Mesh"
+path="res://.import/ducky.vox-feba63e0fd522c484b56129bf318b56e.mesh"
+
+[deps]
+
+source_file="res://Assets/Voxel Assets/bathroom/ducky.vox"
+dest_files=[ "res://.import/ducky.vox-feba63e0fd522c484b56129bf318b56e.mesh" ]
+
+[params]
+

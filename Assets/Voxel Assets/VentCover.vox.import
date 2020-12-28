@@ -1,0 +1,13 @@
+[remap]
+
+importer="MagicaVoxel-Importer"
+type="Mesh"
+path="res://.import/VentCover.vox-d83779bd5812900038959ae41432a548.mesh"
+
+[deps]
+
+source_file="res://Assets/Voxel Assets/VentCover.vox"
+dest_files=[ "res://.import/VentCover.vox-d83779bd5812900038959ae41432a548.mesh" ]
+
+[params]
+

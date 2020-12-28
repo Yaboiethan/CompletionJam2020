@@ -1,0 +1,13 @@
+[remap]
+
+importer="MagicaVoxel-Importer"
+type="Mesh"
+path="res://.import/sink.vox-5daea50c27c267a503d124a569c0f550.mesh"
+
+[deps]
+
+source_file="res://Assets/Voxel Assets/bathroom/sink.vox"
+dest_files=[ "res://.import/sink.vox-5daea50c27c267a503d124a569c0f550.mesh" ]
+
+[params]
+

@@ -1,0 +1,13 @@
+[remap]
+
+importer="MagicaVoxel-Importer"
+type="Mesh"
+path="res://.import/PrisonDoor.vox-4600a50e7e130aaf1b3a8883832cfdf5.mesh"
+
+[deps]
+
+source_file="res://Assets/Voxel Assets/PrisonDoor.vox"
+dest_files=[ "res://.import/PrisonDoor.vox-4600a50e7e130aaf1b3a8883832cfdf5.mesh" ]
+
+[params]
+

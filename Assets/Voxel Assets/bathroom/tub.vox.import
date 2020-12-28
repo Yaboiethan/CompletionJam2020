@@ -1,0 +1,13 @@
+[remap]
+
+importer="MagicaVoxel-Importer"
+type="Mesh"
+path="res://.import/tub.vox-49dc9ebe8dcde82ac774f9236107417e.mesh"
+
+[deps]
+
+source_file="res://Assets/Voxel Assets/bathroom/tub.vox"
+dest_files=[ "res://.import/tub.vox-49dc9ebe8dcde82ac774f9236107417e.mesh" ]
+
+[params]
+

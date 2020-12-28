@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://assets/player/Player.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Component Scenes/Pistol.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Assets/Voxel Assets/Player.vox" type="ArrayMesh" id=2]
 
 [sub_resource type="PhysicsMaterial" id=1]
 friction = 0.0
@@ -10,14 +10,61 @@ friction = 0.0
 radius = 0.3
 height = 0.6
 
-[sub_resource type="SpatialMaterial" id=3]
-albedo_color = Color( 0.16, 0.8, 0.16, 1 )
+[sub_resource type="Animation" id=3]
+resource_name = "Gun_Recoil"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("Camera/Gun_Holder:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, -0.523, -0.602 ), Vector3( 0, -0.523, -0.469406 ), Vector3( 0, -0.523, -0.602 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Camera/Gun_Holder:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 180, 0 ), Vector3( -29.38, 180, 4.87085e-06 ), Vector3( 0, 180, 0 ) ]
+}
 
-[sub_resource type="CapsuleMesh" id=4]
-material = SubResource( 3 )
-radius = 0.3
-mid_height = 0.6
-radial_segments = 16
+[sub_resource type="Animation" id=4]
+resource_name = "Knife_Stab"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("Camera/Gun_Holder:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, -0.523, -0.602 ), Vector3( 0, -0.523, -1.07183 ), Vector3( 0, -0.523, -0.602 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Camera/Gun_Holder:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 180, 0 ), Vector3( 0, 180, 0 ), Vector3( 0, 180, 0 ) ]
+}
 
 [node name="Player" type="RigidBody"]
 mode = 2
@@ -29,7 +76,9 @@ transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 1.2,
 shape = SubResource( 2 )
 
 [node name="MeshInstance" type="MeshInstance" parent="CollisionShape"]
-mesh = SubResource( 4 )
+transform = Transform( -0.04, -1.30337e-08, -6.51683e-09, 6.51683e-09, 1.06173e-15, -0.04, 1.30337e-08, -0.04, 1.06173e-15, 0, 0.00143573, 0.578047 )
+layers = 2
+mesh = ExtResource( 2 )
 material/0 = null
 
 [node name="RayCast" type="RayCast" parent="."]
@@ -37,11 +86,14 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0 )
 
 [node name="Camera" type="Camera" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6, 0 )
+cull_mask = 1048573
 current = true
 fov = 90.0
 far = 160.0
 
 [node name="Gun_Holder" type="Spatial" parent="Camera"]
-transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 0, -1.6, -0.601713 )
+transform = Transform( -1, 0, 1.50996e-07, 0, 1, 0, -1.50996e-07, 0, -1, 0, -0.523, -0.602 )
 
-[node name="MeshInstance" parent="Camera/Gun_Holder" instance=ExtResource( 2 )]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Gun_Recoil = SubResource( 3 )
+anims/Knife_Stab = SubResource( 4 )

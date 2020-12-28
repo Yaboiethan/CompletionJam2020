@@ -1,0 +1,13 @@
+[remap]
+
+importer="MagicaVoxel-Importer"
+type="Mesh"
+path="res://.import/laundry_basket.vox-e792f20d0da10f3cfcbe33115f45992f.mesh"
+
+[deps]
+
+source_file="res://Assets/Voxel Assets/bathroom/laundry_basket.vox"
+dest_files=[ "res://.import/laundry_basket.vox-e792f20d0da10f3cfcbe33115f45992f.mesh" ]
+
+[params]
+

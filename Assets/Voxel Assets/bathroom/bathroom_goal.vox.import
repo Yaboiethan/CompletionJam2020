@@ -1,0 +1,13 @@
+[remap]
+
+importer="MagicaVoxel-Importer"
+type="Mesh"
+path="res://.import/bathroom_goal.vox-f36fda067921078d67f554c47bfc5370.mesh"
+
+[deps]
+
+source_file="res://Assets/Voxel Assets/bathroom/bathroom_goal.vox"
+dest_files=[ "res://.import/bathroom_goal.vox-f36fda067921078d67f554c47bfc5370.mesh" ]
+
+[params]
+
