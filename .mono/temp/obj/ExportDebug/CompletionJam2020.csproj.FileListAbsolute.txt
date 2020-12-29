@@ -1,0 +1,8 @@
+C:\Users\ethan\Documents\GitHub\CompletionJam2020\.mono\temp\bin\ExportDebug\CompletionJam2020.dll
+C:\Users\ethan\Documents\GitHub\CompletionJam2020\.mono\temp\bin\ExportDebug\CompletionJam2020.pdb
+C:\Users\ethan\Documents\GitHub\CompletionJam2020\.mono\temp\obj\ExportDebug\CompletionJam2020.csprojAssemblyReference.cache
+C:\Users\ethan\Documents\GitHub\CompletionJam2020\.mono\temp\obj\ExportDebug\CompletionJam2020.AssemblyInfoInputs.cache
+C:\Users\ethan\Documents\GitHub\CompletionJam2020\.mono\temp\obj\ExportDebug\CompletionJam2020.AssemblyInfo.cs
+C:\Users\ethan\Documents\GitHub\CompletionJam2020\.mono\temp\obj\ExportDebug\CompletionJam2020.csproj.CoreCompileInputs.cache
+C:\Users\ethan\Documents\GitHub\CompletionJam2020\.mono\temp\obj\ExportDebug\CompletionJam2020.dll
+C:\Users\ethan\Documents\GitHub\CompletionJam2020\.mono\temp\obj\ExportDebug\CompletionJam2020.pdb

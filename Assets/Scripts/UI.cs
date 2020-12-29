@@ -1,5 +1,4 @@
 using Godot;
-using System;
 
 public class UI : Node
 {
@@ -11,12 +10,16 @@ public class UI : Node
     private Label healthLabel;
     private Label ammoLabel;
     private static Label objectiveLabel;
+    private LevelManager level;
     //Components for menus
     private Control gameOverMenu;
+    private Control levelCompleteMenu;
+    private Control pauseMenu;
 
     public override void _Ready()
     {
         //Get Components
+        level = (LevelManager)GetTree().Root.GetChild(0);
         topBar = GetNode<Control>("TopBar_Container");
         healthLabel = GetNode<Label>("TopBar_Container/Bar/MarginContainer//HBoxContainer/Health_Label");
         ammoLabel = GetNode<Label>("TopBar_Container/Bar/MarginContainer//HBoxContainer/Ammo_Label");
@@ -25,7 +28,22 @@ public class UI : Node
         gameOverMenu = GetNode<Control>("GameOver_Container");
         gameOverMenu.Hide();
 
+        levelCompleteMenu = GetNode<Control>("LevelBeat_Container");
+        levelCompleteMenu.Hide();
+
+        pauseMenu = GetNode<Control>("PauseMenu_Container");
+        pauseMenu.Hide();
+
         changeObjective(openingObjective);
+    }
+
+    public override void _Input(InputEvent @event)
+    {
+        base._Input(@event);
+        if (@event.IsActionPressed("ui_cancel"))
+        {
+            updatePauseMenu();
+        }
     }
 
     public void updateAmmoUI(int clip, int total)
@@ -52,7 +70,39 @@ public class UI : Node
 
     public void levelComplete()
     {
+        Input.SetMouseMode(Input.MouseMode.Visible);
+        GetTree().Paused = true;
         //Open level complete menu
+        levelCompleteMenu.Show();
+        //Check if next level to play
+        if (level.nextLevel == null)
+        {
+            //Hide next level button
+            GetNode<Control>("LevelBeat_Container/TextureRect/MarginContainer/VBoxContainer/NextLevelButton").Hide();
+        }
+        //Play some fanfare
+        level.changeMusic(2, -5);
+    }
+
+    public void updatePauseMenu()
+    {
+        bool visSetting = false;
+        //See if we need to turn the thing off or on
+        if (!pauseMenu.Visible)
+        {
+            visSetting = true; //We need to turn everything on
+        }
+        pauseMenu.Visible = visSetting;
+        GetTree().Paused = visSetting;
+
+        if (visSetting)
+        {
+            Input.SetMouseMode(Input.MouseMode.Visible);
+        }
+        else
+        {
+            Input.SetMouseMode(Input.MouseMode.Captured);
+        }
     }
 
     public static void changeObjective(string objt)
@@ -65,11 +115,26 @@ public class UI : Node
     {
         GetTree().ReloadCurrentScene();
         GetTree().Paused = false;
-
     }
 
     public void _on_MenuButton_button_down()
     {
-        
+        GetTree().ChangeScene("res://Assets/Game_Scenes/Main_Menu.tscn");
+        GetTree().Paused = false;
     }
+
+    public void _on_NextLevelButton_button_down()
+    {
+        //Even though the button is hidden when there is no next level, this is a failsafe
+        if (level.nextLevel != null)
+        {
+            GetTree().ChangeSceneTo(level.nextLevel);
+        }
+        else
+        {
+            GetTree().ChangeScene("res://Assets/Game_Scenes/Main_Menu.tscn");
+        }
+        GetTree().Paused = false;
+    }
+
 }

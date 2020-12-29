@@ -16,11 +16,10 @@ public class LevelCompletePoint : Area
     {
         if(body.Name == "Player" && pointActive)
         {
-            GD.Print("LEVEL COMPLETE");
             //Disable movement
             body.Set("canMove", false);
             //Turn on ui
-            
+            uiManager.levelComplete();
         }
     }
 }

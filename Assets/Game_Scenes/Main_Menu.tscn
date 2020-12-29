@@ -10,19 +10,19 @@
 [ext_resource path="res://addons/onyx/nodes/onyx/onyx_shape.gd" type="Script" id=8]
 [ext_resource path="res://Assets/Voxel Assets/CopGuy.vox" type="ArrayMesh" id=9]
 [ext_resource path="res://Assets/Voxel Assets/Player.vox" type="ArrayMesh" id=10]
-[ext_resource path="res://Assets/Audio Assets/GFX/01_-_sam_goor00_collard_-_waiting_room.ogg" type="AudioStream" id=11]
+[ext_resource path="res://Assets/Audio Assets/GFX/b423b42.wav" type="AudioStream" id=11]
 [ext_resource path="res://Assets/Component Scenes/MainMenuUI.tscn" type="PackedScene" id=12]
 
-[sub_resource type="BoxShape" id=4]
+[sub_resource type="BoxShape" id=1]
 extents = Vector3( 17.0799, 18.286, 1 )
 
-[sub_resource type="BoxShape" id=5]
+[sub_resource type="BoxShape" id=2]
 extents = Vector3( 20.5586, 50.5088, 16.7443 )
 
-[sub_resource type="BoxShape" id=6]
+[sub_resource type="BoxShape" id=3]
 extents = Vector3( 7.24189, 34.0561, 11.0654 )
 
-[sub_resource type="BoxShape" id=7]
+[sub_resource type="BoxShape" id=4]
 extents = Vector3( 10.9169, 5.0993, 17.7666 )
 
 [node name="Main_Menu" type="Spatial"]
@@ -151,7 +151,7 @@ material/0 = null
 
 [node name="CollisionShape" type="CollisionShape" parent="CSGCombiner/Cell2/PrisonDoor/StaticBody"]
 transform = Transform( 1, 0, -2.84217e-14, 0, 1, 0, -1.42109e-14, 0, 1, 0, 14.2371, 0 )
-shape = SubResource( 4 )
+shape = SubResource( 1 )
 
 [node name="PrisonDoor2" type="MeshInstance" parent="CSGCombiner/Cell2"]
 transform = Transform( -2.49565e-08, 0, 0.153182, 0, 0.142405, 0, -0.224021, 0, -3.64976e-08, -10.1449, 4.49889, 0.0850029 )
@@ -162,7 +162,7 @@ material/0 = null
 
 [node name="CollisionShape" type="CollisionShape" parent="CSGCombiner/Cell2/PrisonDoor2/StaticBody"]
 transform = Transform( 1, 0, -2.84217e-14, 0, 1, 0, -1.42109e-14, 0, 1, 0, 14.2371, 0 )
-shape = SubResource( 4 )
+shape = SubResource( 1 )
 
 [node name="toilet" type="MeshInstance" parent="CSGCombiner/Cell2"]
 transform = Transform( -1.62921e-08, 0, 0.19, 0, 0.08, 0, -0.1, 0, -3.09549e-08, -6.27382, -0.111434, -5.70459 )
@@ -172,7 +172,7 @@ material/0 = null
 [node name="StaticBody" type="StaticBody" parent="CSGCombiner/Cell2/toilet"]
 
 [node name="CollisionShape" type="CollisionShape" parent="CSGCombiner/Cell2/toilet/StaticBody"]
-shape = SubResource( 5 )
+shape = SubResource( 2 )
 
 [node name="sink" type="MeshInstance" parent="CSGCombiner/Cell2"]
 transform = Transform( -2.44381e-08, 0, 0.15, 0, 0.15, 0, -0.15, 0, -2.44381e-08, -0.621048, 0.0365441, -6.40519 )
@@ -182,7 +182,7 @@ material/0 = null
 [node name="StaticBody" type="StaticBody" parent="CSGCombiner/Cell2/sink"]
 
 [node name="CollisionShape" type="CollisionShape" parent="CSGCombiner/Cell2/sink/StaticBody"]
-shape = SubResource( 6 )
+shape = SubResource( 3 )
 
 [node name="bathroom_carpet" type="MeshInstance" parent="CSGCombiner/Cell2"]
 transform = Transform( 0.5, 0, 0, 0, 0.01, 0, 0, 0, 0.5, -0.671043, 0, 0 )
@@ -198,7 +198,7 @@ material/0 = null
 
 [node name="CollisionShape" type="CollisionShape" parent="CSGCombiner/Cell2/PrisonBed/StaticBody"]
 transform = Transform( 1, 0, -5.68434e-14, 0, 1, 0, 0, 0, 1, 0, 1.37085, 0 )
-shape = SubResource( 7 )
+shape = SubResource( 4 )
 
 [node name="OmniLight" type="OmniLight" parent="CSGCombiner/Cell2"]
 transform = Transform( 5.62148, 0, 0, 0, 3.40793, 0, 0, 0, 4.14664, 0, 8.53004, 0 )
@@ -329,5 +329,5 @@ material/0 = null
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 11 )
-volume_db = -5.0
+volume_db = -3.0
 autoplay = true

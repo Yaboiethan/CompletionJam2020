@@ -23,7 +23,6 @@ export var left_action = "player_left"
 export var right_action = "player_right"
 export var sprint_action = "player_sprint"
 export var jump_action = "player_jump"
-export var uncapture_action = "ui_cancel"
 
 export var mouse_start_captured : bool = true
 
@@ -69,7 +68,7 @@ func handle_focus(event : InputEvent):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE);
 
 func _unhandled_input(event : InputEvent):
-	self.handle_focus(event);
+	#self.handle_focus(event);
 	if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
 		if event is InputEventMouseMotion:
 			handle_orientation(event)
@@ -164,6 +163,8 @@ func _physics_process(delta):
 func pickUpGun(Gun):
 	var gunPickup = Gun.get_parent();
 	#Check if player has gun to put back
+	if gunHolder.get_child_count() > 0:
+			gunHolder.get_child(0).visible = false;
 	if gunHolder.get_child_count() > 1:
 		gunPickup.call_deferred("gunSwap", gunHolder.get_child(1));
 	if Gun.get_parent() != null:

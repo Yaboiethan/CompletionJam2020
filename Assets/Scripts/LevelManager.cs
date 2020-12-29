@@ -4,6 +4,8 @@ using System;
 public class LevelManager : Node
 {
     [Export]
+    public PackedScene nextLevel;
+    [Export]
     private AudioStream[] clips;
 
     private static RigidBody player;
@@ -32,6 +34,13 @@ public class LevelManager : Node
     public void changeMusic(int clip)
     {
         musicBox.Stream = clips[clip];
+        musicBox.Play();
+    }
+
+    public void changeMusic(int clip, int db)
+    {
+        musicBox.Stream = clips[clip];
+        musicBox.VolumeDb = db;
         musicBox.Play();
     }
 

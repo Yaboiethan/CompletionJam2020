@@ -29,6 +29,7 @@ _global_script_class_icons={
 config/name="CompletionJam2020"
 run/main_scene="res://Assets/Game_Scenes/Main_Menu.tscn"
 config/icon="res://nIcon.png"
+config/windows_native_icon="res://PinHead_Icon.ico"
 
 [display]
 
