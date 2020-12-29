@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/farm-9-root_growth0.obj-b944b5dcdf80e3fc405e40183a044396.mesh"
+
+[deps]
+
+files=[ "res://.import/farm-9-root_growth0.obj-b944b5dcdf80e3fc405e40183a044396.mesh" ]
+
+source_file="res://Assets/Voxel Assets/farm/farm-9-root_growth0.obj"
+dest_files=[ "res://.import/farm-9-root_growth0.obj-b944b5dcdf80e3fc405e40183a044396.mesh", "res://.import/farm-9-root_growth0.obj-b944b5dcdf80e3fc405e40183a044396.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

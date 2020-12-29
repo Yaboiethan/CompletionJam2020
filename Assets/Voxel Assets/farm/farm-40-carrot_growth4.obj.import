@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/farm-40-carrot_growth4.obj-e1dc52ae8142045396aa5c485e05766e.mesh"
+
+[deps]
+
+files=[ "res://.import/farm-40-carrot_growth4.obj-e1dc52ae8142045396aa5c485e05766e.mesh" ]
+
+source_file="res://Assets/Voxel Assets/farm/farm-40-carrot_growth4.obj"
+dest_files=[ "res://.import/farm-40-carrot_growth4.obj-e1dc52ae8142045396aa5c485e05766e.mesh", "res://.import/farm-40-carrot_growth4.obj-e1dc52ae8142045396aa5c485e05766e.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

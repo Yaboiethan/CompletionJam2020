@@ -1,51 +1,13 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Assets/UI Sprites/Textbox.png" type="Texture" id=1]
+[ext_resource path="res://Assets/UI Sprites/GameOverMenu.png" type="Texture" id=1]
 [ext_resource path="res://Dynamicka1Font.tres" type="DynamicFont" id=2]
 [ext_resource path="res://Assets/UI Sprites/TopBlackBar.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Scripts/UI.cs" type="Script" id=4]
 
 [node name="UI" type="CanvasLayer"]
+pause_mode = 2
 script = ExtResource( 4 )
-
-[node name="Textbox_Container" type="CenterContainer" parent="."]
-visible = false
-anchor_top = 1.0
-anchor_bottom = 1.0
-margin_top = -200.0
-margin_right = 1024.0
-mouse_filter = 2
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Textbox" type="TextureRect" parent="Textbox_Container"]
-margin_right = 1024.0
-margin_bottom = 200.0
-mouse_filter = 2
-texture = ExtResource( 1 )
-
-[node name="MarginContainer" type="MarginContainer" parent="Textbox_Container/Textbox"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 20.0
-margin_top = 20.0
-margin_right = -20.0
-margin_bottom = -20.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Text" type="Label" parent="Textbox_Container/Textbox/MarginContainer"]
-margin_top = 45.0
-margin_right = 984.0
-margin_bottom = 114.0
-custom_fonts/font = ExtResource( 2 )
-text = "This is text
-Help me please"
-align = 1
-valign = 1
-autowrap = true
 
 [node name="TopBar_Container" type="CenterContainer" parent="."]
 anchor_right = 1.0
@@ -68,34 +30,146 @@ texture = ExtResource( 3 )
 expand = true
 
 [node name="MarginContainer" type="MarginContainer" parent="TopBar_Container/Bar"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 20.0
-margin_top = 20.0
-margin_right = -20.0
-margin_bottom = -20.0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -532.0
+margin_top = -30.0
+margin_right = 532.0
+margin_bottom = 30.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="HBoxContainer" type="HBoxContainer" parent="TopBar_Container/Bar/MarginContainer"]
-margin_left = 135.0
-margin_right = 848.0
-margin_bottom = 60.0
+margin_left = 92.0
+margin_right = 971.0
+margin_bottom = 69.0
 size_flags_horizontal = 4
-custom_constants/separation = 400
+size_flags_vertical = 4
+custom_constants/separation = 180
+
+[node name="Objective_Label" type="Label" parent="TopBar_Container/Bar/MarginContainer/HBoxContainer"]
+margin_right = 206.0
+margin_bottom = 69.0
+custom_fonts/font = ExtResource( 2 )
+text = "Objective:
+Find a way out"
 
 [node name="Health_Label" type="Label" parent="TopBar_Container/Bar/MarginContainer/HBoxContainer"]
-margin_top = 13.0
-margin_right = 151.0
-margin_bottom = 46.0
+margin_left = 386.0
+margin_top = 18.0
+margin_right = 537.0
+margin_bottom = 51.0
 custom_fonts/font = ExtResource( 2 )
 text = "Health: 100"
 
 [node name="Ammo_Label" type="Label" parent="TopBar_Container/Bar/MarginContainer/HBoxContainer"]
-margin_left = 551.0
-margin_top = 13.0
-margin_right = 713.0
-margin_bottom = 46.0
+margin_left = 717.0
+margin_top = 18.0
+margin_right = 879.0
+margin_bottom = 51.0
 custom_fonts/font = ExtResource( 2 )
 text = "Ammo: --/--"
+
+[node name="GameOver_Container" type="CenterContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 1
+size_flags_horizontal = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="GameOver_Container"]
+margin_left = 312.0
+margin_top = 50.0
+margin_right = 712.0
+margin_bottom = 550.0
+texture = ExtResource( 1 )
+
+[node name="MarginContainer" type="MarginContainer" parent="GameOver_Container/TextureRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 1
+custom_constants/margin_right = 20
+custom_constants/margin_top = 20
+custom_constants/margin_left = 20
+custom_constants/margin_bottom = 20
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GameOver_Container/TextureRect/MarginContainer"]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 380.0
+margin_bottom = 480.0
+custom_constants/separation = 50
+
+[node name="BlackBar" type="TextureRect" parent="GameOver_Container/TextureRect/MarginContainer/VBoxContainer"]
+margin_right = 360.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 0, 50 )
+texture = ExtResource( 3 )
+expand = true
+stretch_mode = 6
+
+[node name="GameOverText" type="Label" parent="GameOver_Container/TextureRect/MarginContainer/VBoxContainer/BlackBar"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -512.0
+margin_top = -16.5
+margin_right = 512.0
+margin_bottom = 16.5
+custom_fonts/font = ExtResource( 2 )
+text = "GAME OVER"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RetryButton" type="TextureButton" parent="GameOver_Container/TextureRect/MarginContainer/VBoxContainer"]
+margin_top = 100.0
+margin_right = 360.0
+margin_bottom = 200.0
+rect_min_size = Vector2( 0, 100 )
+mouse_filter = 1
+texture_normal = ExtResource( 3 )
+expand = true
+
+[node name="Label" type="Label" parent="GameOver_Container/TextureRect/MarginContainer/VBoxContainer/RetryButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 2 )
+text = "Retry"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MenuButton" type="TextureButton" parent="GameOver_Container/TextureRect/MarginContainer/VBoxContainer"]
+margin_top = 250.0
+margin_right = 360.0
+margin_bottom = 350.0
+rect_min_size = Vector2( 0, 100 )
+mouse_filter = 1
+texture_normal = ExtResource( 3 )
+expand = true
+
+[node name="Label2" type="Label" parent="GameOver_Container/TextureRect/MarginContainer/VBoxContainer/MenuButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 2 )
+text = "Main Menu"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="button_down" from="GameOver_Container/TextureRect/MarginContainer/VBoxContainer/RetryButton" to="." method="_on_RetryButton_button_down"]
+[connection signal="button_down" from="GameOver_Container/TextureRect/MarginContainer/VBoxContainer/MenuButton" to="." method="_on_MenuButton_button_down"]

@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Assets/Audio Assets/GunPickup.wav" type="AudioStream" id=1]
+[ext_resource path="res://Assets/Scripts/PickUp.cs" type="Script" id=2]
+[ext_resource path="res://Assets/Voxel Assets/AmmoPickup.vox" type="ArrayMesh" id=3]
+[ext_resource path="res://Assets/Voxel Assets/Medkit.vox" type="ArrayMesh" id=4]
+
+[sub_resource type="SphereShape" id=1]
+radius = 1.12163
+
+[node name="Pickup" type="Area"]
+script = ExtResource( 2 )
+ammoMesh = ExtResource( 3 )
+
+[node name="Mesh" type="MeshInstance" parent="."]
+transform = Transform( 0.032681, 0.00147111, 0.0230172, 0.00765873, 0.0369613, -0.0132366, -0.0217554, 0.0152217, 0.0299166, 0, 0, 0 )
+mesh = ExtResource( 4 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+shape = SubResource( 1 )
+
+[node name="Audio" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource( 1 )
+unit_size = 3.0
+[connection signal="body_entered" from="." to="." method="_on_Medpack_Pickup_body_entered"]
+[connection signal="finished" from="Audio" to="." method="_on_Audio_finished"]

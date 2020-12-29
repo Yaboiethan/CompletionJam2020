@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/farm-19-cow_br.obj-05ad18f6b1a7748683c65a31dfa8c214.mesh"
+
+[deps]
+
+files=[ "res://.import/farm-19-cow_br.obj-05ad18f6b1a7748683c65a31dfa8c214.mesh" ]
+
+source_file="res://Assets/Voxel Assets/farm/farm-19-cow_br.obj"
+dest_files=[ "res://.import/farm-19-cow_br.obj-05ad18f6b1a7748683c65a31dfa8c214.mesh", "res://.import/farm-19-cow_br.obj-05ad18f6b1a7748683c65a31dfa8c214.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

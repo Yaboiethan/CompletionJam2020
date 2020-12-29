@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/farm-46-chicken_white.obj-46b81f2afbb711e43cbcd23848eb4b0a.mesh"
+
+[deps]
+
+files=[ "res://.import/farm-46-chicken_white.obj-46b81f2afbb711e43cbcd23848eb4b0a.mesh" ]
+
+source_file="res://Assets/Voxel Assets/farm/farm-46-chicken_white.obj"
+dest_files=[ "res://.import/farm-46-chicken_white.obj-46b81f2afbb711e43cbcd23848eb4b0a.mesh", "res://.import/farm-46-chicken_white.obj-46b81f2afbb711e43cbcd23848eb4b0a.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

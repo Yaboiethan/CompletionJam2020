@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/farm-58-crop_base.obj-feb95720ca82b899e442aca78ce48f2a.mesh"
+
+[deps]
+
+files=[ "res://.import/farm-58-crop_base.obj-feb95720ca82b899e442aca78ce48f2a.mesh" ]
+
+source_file="res://Assets/Voxel Assets/farm/farm-58-crop_base.obj"
+dest_files=[ "res://.import/farm-58-crop_base.obj-feb95720ca82b899e442aca78ce48f2a.mesh", "res://.import/farm-58-crop_base.obj-feb95720ca82b899e442aca78ce48f2a.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

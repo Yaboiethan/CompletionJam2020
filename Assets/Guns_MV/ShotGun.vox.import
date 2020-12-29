@@ -1,0 +1,13 @@
+[remap]
+
+importer="MagicaVoxel-Importer"
+type="Mesh"
+path="res://.import/ShotGun.vox-66663e385fe71b51d9f6afb4d702dce4.mesh"
+
+[deps]
+
+source_file="res://Assets/Guns_MV/ShotGun.vox"
+dest_files=[ "res://.import/ShotGun.vox-66663e385fe71b51d9f6afb4d702dce4.mesh" ]
+
+[params]
+

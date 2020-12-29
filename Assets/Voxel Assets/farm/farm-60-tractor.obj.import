@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/farm-60-tractor.obj-67da5c05b9fb3d79035760eddaec61fc.mesh"
+
+[deps]
+
+files=[ "res://.import/farm-60-tractor.obj-67da5c05b9fb3d79035760eddaec61fc.mesh" ]
+
+source_file="res://Assets/Voxel Assets/farm/farm-60-tractor.obj"
+dest_files=[ "res://.import/farm-60-tractor.obj-67da5c05b9fb3d79035760eddaec61fc.mesh", "res://.import/farm-60-tractor.obj-67da5c05b9fb3d79035760eddaec61fc.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/farm-17-shovel.obj-690b8d3333327c4bca67f0ec8756657f.mesh"
+
+[deps]
+
+files=[ "res://.import/farm-17-shovel.obj-690b8d3333327c4bca67f0ec8756657f.mesh" ]
+
+source_file="res://Assets/Voxel Assets/farm/farm-17-shovel.obj"
+dest_files=[ "res://.import/farm-17-shovel.obj-690b8d3333327c4bca67f0ec8756657f.mesh", "res://.import/farm-17-shovel.obj-690b8d3333327c4bca67f0ec8756657f.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

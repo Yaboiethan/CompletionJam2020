@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/farm-5-seed_beet.obj-7d6e85227ce8e94b9e0d8fc0f938b426.mesh"
+
+[deps]
+
+files=[ "res://.import/farm-5-seed_beet.obj-7d6e85227ce8e94b9e0d8fc0f938b426.mesh" ]
+
+source_file="res://Assets/Voxel Assets/farm/farm-5-seed_beet.obj"
+dest_files=[ "res://.import/farm-5-seed_beet.obj-7d6e85227ce8e94b9e0d8fc0f938b426.mesh", "res://.import/farm-5-seed_beet.obj-7d6e85227ce8e94b9e0d8fc0f938b426.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

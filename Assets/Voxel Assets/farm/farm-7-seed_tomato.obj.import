@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/farm-7-seed_tomato.obj-23474a4f2d1f0b934757fc5719173e33.mesh"
+
+[deps]
+
+files=[ "res://.import/farm-7-seed_tomato.obj-23474a4f2d1f0b934757fc5719173e33.mesh" ]
+
+source_file="res://Assets/Voxel Assets/farm/farm-7-seed_tomato.obj"
+dest_files=[ "res://.import/farm-7-seed_tomato.obj-23474a4f2d1f0b934757fc5719173e33.mesh", "res://.import/farm-7-seed_tomato.obj-23474a4f2d1f0b934757fc5719173e33.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

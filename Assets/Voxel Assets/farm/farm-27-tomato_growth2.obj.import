@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/farm-27-tomato_growth2.obj-bf2be162c49ff0e8117c0181e5aff030.mesh"
+
+[deps]
+
+files=[ "res://.import/farm-27-tomato_growth2.obj-bf2be162c49ff0e8117c0181e5aff030.mesh" ]
+
+source_file="res://Assets/Voxel Assets/farm/farm-27-tomato_growth2.obj"
+dest_files=[ "res://.import/farm-27-tomato_growth2.obj-bf2be162c49ff0e8117c0181e5aff030.mesh", "res://.import/farm-27-tomato_growth2.obj-bf2be162c49ff0e8117c0181e5aff030.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/blind rage.ogg-ea5240e0161de3580f0c74814075cadb.oggstr"
+
+[deps]
+
+source_file="res://Assets/Audio Assets/GFX/blind rage.ogg"
+dest_files=[ "res://.import/blind rage.ogg-ea5240e0161de3580f0c74814075cadb.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

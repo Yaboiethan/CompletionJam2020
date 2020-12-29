@@ -5,6 +5,8 @@ public class Bullet : KinematicBody
 {
     [Export]
     private float speed = 15;
+    public bool enemyFire;
+    public int playerDamage;
 
     private AudioStreamPlayer3D audio;
 
@@ -24,7 +26,17 @@ public class Bullet : KinematicBody
             audio.Play();
             if (collision.Collider.HasMethod("Hit"))
             {
-                collision.Collider.Call("Hit");
+                if (enemyFire)
+                {
+                    if (collision.Collider is EnemyAgent == false)
+                    {
+                        collision.Collider.Call("Hit");
+                    }
+                }
+                else 
+                {
+                    collision.Collider.Call("Hit");
+                }
             }
             QueueFree();
         }

@@ -1,0 +1,13 @@
+[remap]
+
+importer="MagicaVoxel-Importer"
+type="Mesh"
+path="res://.import/MaximumSecurityDoor.vox-ff28ecf099333628d67096f31356ec62.mesh"
+
+[deps]
+
+source_file="res://Assets/Voxel Assets/MaximumSecurityDoor.vox"
+dest_files=[ "res://.import/MaximumSecurityDoor.vox-ff28ecf099333628d67096f31356ec62.mesh" ]
+
+[params]
+

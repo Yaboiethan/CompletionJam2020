@@ -7,9 +7,10 @@ public class Knife : Weapon
     [Export]
     private float stabRate = 3;
 
+    private bool inStab = false;
+
     //Components
     private AudioStreamPlayer audio;
-
 
     public override void _Ready()
     {
@@ -26,6 +27,7 @@ public class Knife : Weapon
         base._Input(@event);
         if (@event.IsActionPressed("Gun_Shoot") && canUse && inUse)
         {
+            inStab = false;
             //Play animation
             anim.Play("Knife_Stab");
             //Play sound
@@ -36,12 +38,36 @@ public class Knife : Weapon
         }
     }
 
+    public override void setAnimator(Node holder)
+    {
+        base.setAnimator(holder);
+        //Connect signals
+        anim.Connect("animation_started", this, nameof(_on_AnimationPlayer_animation_started));
+        anim.Connect("animation_finished", this, nameof(_on_AnimationPlayer_animation_finished));
+    }
+
     //-----------Signals
     public void _on_Knife_body_entered(Node body)
     {
-        if (body is EnemyAgent && body.HasMethod("Hit"))
+        if (body is EnemyAgent && body.HasMethod("Hit") && inStab)
         {
             body.Call("Hit");
+        }
+    }
+
+    public void _on_AnimationPlayer_animation_started(string animName)
+    {
+        if (animName == "Knife_Stab")
+        {
+            inStab = true;
+        }
+    }
+
+    public void _on_AnimationPlayer_animation_finished(string animName)
+    {
+        if (animName == "Knife_Stab")
+        {
+            inStab = false;
         }
     }
 }

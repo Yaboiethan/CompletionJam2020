@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using System.Collections.Generic;
 
 public class Gun : Weapon
 {
@@ -17,11 +18,12 @@ public class Gun : Weapon
 
     private int curAmmo;
     private int curClip;
-
+    public bool usedByEnemy = false;
 
     private Spatial firePoint;
+    private List<Spatial> additionalFirePoints = new List<Spatial>();
     private Particles smokeParticles;
-    private AudioStreamPlayer audio;
+    private AudioStreamPlayer3D audio;
 
     [Export]
     private AudioStream[] audioClips; //0 == fire sound, 1 == reload sound, 2 == jam sound
@@ -35,15 +37,33 @@ public class Gun : Weapon
         {
             anim = GetParent().GetParent().GetParent().GetNode<AnimationPlayer>("AnimationPlayer");
         }
-        audio = GetNode<AudioStreamPlayer>("AudioPlayer");
+        audio = GetNode<AudioStreamPlayer3D>("AudioPlayer");
         //Set ammo vars
         curAmmo = ammoMax;
         curClip = ammoCapacity;
+        //Get other firepoints
+        foreach(Node n in GetChildren())
+        {
+            if(n.Name.Find("Fire_Point") != -1 && n != firePoint)
+            {
+                additionalFirePoints.Add((Spatial)n);
+            }
+        }
+    }
+
+    public void onEnemySelection(AnimationPlayer a)
+    {
+        anim = a;
     }
 
     public override void _Input(InputEvent @event)
     {
         base._Input(@event);
+        //Check if enemy gun
+        if (usedByEnemy)
+        {
+            return;
+        }
         //Check if fire gun
         if (@event.IsActionPressed("Gun_Shoot") && canUse && inUse)
         {
@@ -70,9 +90,7 @@ public class Gun : Weapon
                 }
             }
             //Spawn in bullet instance and adjust
-            var b = (Bullet)bulletInstance.Instance();
-            b.Start(ToGlobal(firePoint.Translation), ((Spatial)GetParent().GetParent()).Rotation);
-            GetTree().Root.GetChild(0).AddChild(b);
+            spawnBullet(false);
             //Play sound
             audio.Stream = audioClips[0];
             audio.Play();
@@ -122,6 +140,71 @@ public class Gun : Weapon
         return curClip;
     }
 
+    /*
+     * This function is exclusively for NPC characters, it allows them to shoot without consuming ammo
+     */
+    public virtual void Shoot()
+    {
+        if (canUse)
+        {
+            //Spawn in bullet instance and adjust
+            spawnBullet(true);
+            //Play sound
+            audio.Stream = audioClips[0];
+            audio.Play();
+            //Play particles
+            smokeParticles.Restart();
+            //Play animation
+            anim.Play("Gun_Recoil");
+            canUse = false;
+            curCooldown = fireRate;
+        }
+    }
+
+    private void spawnBullet(bool enemy)
+    {
+        for (int i = 0; i < 1 + additionalFirePoints.Count; i++)
+        {
+            Bullet b = (Bullet)bulletInstance.Instance();
+            //Random rotation if not only shot
+            Vector3 rot = ((Spatial)GetParent().GetParent()).Rotation;
+
+            if (i == 0)
+            {
+                b.Start(ToGlobal(firePoint.Translation), rot);
+            }
+            else 
+            {
+                rot += additionalFirePoints[i - 1].Rotation;
+                b.Start(ToGlobal(additionalFirePoints[i - 1].Translation), rot);
+            }
+            GetTree().Root.GetChild(0).AddChild(b);
+
+            if (enemy)
+            {
+                b.playerDamage = ((EnemyAgent)GetParent().GetParent()).damage;
+                b.enemyFire = true;
+            }
+        }
+    }
+
+    public bool canShoot()
+    {
+        return canUse;
+    }
+
+    public void addBullets(int b)
+    {
+        if (curAmmo + b > ammoMax)
+        {
+            curAmmo = ammoMax;
+        }
+        else
+        {
+            curAmmo += b;
+        }
+    }
+
     //-------------Signals
     public void _on_AnimationPlayer_Animation_Finished(string animName)
     {
@@ -139,7 +222,7 @@ public class Gun : Weapon
                 curAmmo = 0;
             }
             //Update UI
-            uiManager.updateAmmoUI(curClip, curAmmo);
+            updateUI();
             canUse = true;
         }
     }

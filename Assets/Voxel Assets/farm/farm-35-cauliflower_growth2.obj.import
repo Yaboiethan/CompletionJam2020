@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/farm-35-cauliflower_growth2.obj-affd8365896f8ff51af2bd3b01147cb9.mesh"
+
+[deps]
+
+files=[ "res://.import/farm-35-cauliflower_growth2.obj-affd8365896f8ff51af2bd3b01147cb9.mesh" ]
+
+source_file="res://Assets/Voxel Assets/farm/farm-35-cauliflower_growth2.obj"
+dest_files=[ "res://.import/farm-35-cauliflower_growth2.obj-affd8365896f8ff51af2bd3b01147cb9.mesh", "res://.import/farm-35-cauliflower_growth2.obj-affd8365896f8ff51af2bd3b01147cb9.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

@@ -1,0 +1,13 @@
+[remap]
+
+importer="MagicaVoxel-Importer"
+type="Mesh"
+path="res://.import/AmmoPickup.vox-4242346a4bf0ef3714b4eff6f831b981.mesh"
+
+[deps]
+
+source_file="res://Assets/Voxel Assets/AmmoPickup.vox"
+dest_files=[ "res://.import/AmmoPickup.vox-4242346a4bf0ef3714b4eff6f831b981.mesh" ]
+
+[params]
+

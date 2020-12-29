@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/farm-24-sheep_black.obj-12224b6e51129d8f83a1cb3ff14ae091.mesh"
+
+[deps]
+
+files=[ "res://.import/farm-24-sheep_black.obj-12224b6e51129d8f83a1cb3ff14ae091.mesh" ]
+
+source_file="res://Assets/Voxel Assets/farm/farm-24-sheep_black.obj"
+dest_files=[ "res://.import/farm-24-sheep_black.obj-12224b6e51129d8f83a1cb3ff14ae091.mesh", "res://.import/farm-24-sheep_black.obj-12224b6e51129d8f83a1cb3ff14ae091.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

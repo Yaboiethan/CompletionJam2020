@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/farm-54-floor_dirt.obj-eb9aad1033683910e15b0004799deeeb.mesh"
+
+[deps]
+
+files=[ "res://.import/farm-54-floor_dirt.obj-eb9aad1033683910e15b0004799deeeb.mesh" ]
+
+source_file="res://Assets/Voxel Assets/farm/farm-54-floor_dirt.obj"
+dest_files=[ "res://.import/farm-54-floor_dirt.obj-eb9aad1033683910e15b0004799deeeb.mesh", "res://.import/farm-54-floor_dirt.obj-eb9aad1033683910e15b0004799deeeb.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

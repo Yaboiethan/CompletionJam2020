@@ -1,0 +1,13 @@
+[remap]
+
+importer="MagicaVoxel-Importer"
+type="Mesh"
+path="res://.import/Medkit.vox-c66eb8619e8618b2ecd0dd186cf49b66.mesh"
+
+[deps]
+
+source_file="res://Assets/Voxel Assets/Medkit.vox"
+dest_files=[ "res://.import/Medkit.vox-c66eb8619e8618b2ecd0dd186cf49b66.mesh" ]
+
+[params]
+

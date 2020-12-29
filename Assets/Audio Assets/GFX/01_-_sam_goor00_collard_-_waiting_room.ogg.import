@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/01_-_sam_goor00_collard_-_waiting_room.ogg-280ad4f94094036043e112015c615573.oggstr"
+
+[deps]
+
+source_file="res://Assets/Audio Assets/GFX/01_-_sam_goor00_collard_-_waiting_room.ogg"
+dest_files=[ "res://.import/01_-_sam_goor00_collard_-_waiting_room.ogg-280ad4f94094036043e112015c615573.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

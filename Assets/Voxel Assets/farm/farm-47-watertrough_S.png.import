@@ -1,0 +1,36 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path.s3tc="res://.import/farm-47-watertrough_S.png-5e4e32dc0a748d50911627f7aa00e18a.s3tc.stex"
+path.etc="res://.import/farm-47-watertrough_S.png-5e4e32dc0a748d50911627f7aa00e18a.etc.stex"
+metadata={
+"imported_formats": [ "s3tc", "etc" ],
+"vram_texture": true
+}
+
+[deps]
+
+source_file="res://Assets/Voxel Assets/farm/farm-47-watertrough_S.png"
+dest_files=[ "res://.import/farm-47-watertrough_S.png-5e4e32dc0a748d50911627f7aa00e18a.s3tc.stex", "res://.import/farm-47-watertrough_S.png-5e4e32dc0a748d50911627f7aa00e18a.etc.stex" ]
+
+[params]
+
+compress/mode=2
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/bptc_ldr=0
+compress/normal_map=0
+flags/repeat=true
+flags/filter=true
+flags/mipmaps=true
+flags/anisotropic=false
+flags/srgb=1
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+process/invert_color=false
+stream=false
+size_limit=0
+detect_3d=false
+svg/scale=1.0

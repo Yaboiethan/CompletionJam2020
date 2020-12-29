@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/farm-31-corn_growth3.obj-61853947c52025d9fe139ac1ecacf17c.mesh"
+
+[deps]
+
+files=[ "res://.import/farm-31-corn_growth3.obj-61853947c52025d9fe139ac1ecacf17c.mesh" ]
+
+source_file="res://Assets/Voxel Assets/farm/farm-31-corn_growth3.obj"
+dest_files=[ "res://.import/farm-31-corn_growth3.obj-61853947c52025d9fe139ac1ecacf17c.mesh", "res://.import/farm-31-corn_growth3.obj-61853947c52025d9fe139ac1ecacf17c.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

@@ -20,13 +20,13 @@ public class Weapon : Spatial
         uiManager = GetTree().Root.GetChild(0).GetNode<UI>("UI");
     }
 
-
     public override void _PhysicsProcess(float delta)
     {
         base._Process(delta);
         if (curCooldown > 0)
         {
             curCooldown -= 0.1f;
+            canUse = false;
         }
         else 
         {
@@ -39,4 +39,5 @@ public class Weapon : Spatial
     {
         anim = GetParent().GetParent().GetParent().GetNode<AnimationPlayer>("AnimationPlayer");
     }
+
 }

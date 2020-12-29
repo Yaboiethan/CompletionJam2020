@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/farm-42-turnip_growth4.obj-2addefed3bd6570057aae3d1f6ce95ae.mesh"
+
+[deps]
+
+files=[ "res://.import/farm-42-turnip_growth4.obj-2addefed3bd6570057aae3d1f6ce95ae.mesh" ]
+
+source_file="res://Assets/Voxel Assets/farm/farm-42-turnip_growth4.obj"
+dest_files=[ "res://.import/farm-42-turnip_growth4.obj-2addefed3bd6570057aae3d1f6ce95ae.mesh", "res://.import/farm-42-turnip_growth4.obj-2addefed3bd6570057aae3d1f6ce95ae.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

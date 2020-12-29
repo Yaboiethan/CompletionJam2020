@@ -1,5 +1,8 @@
 extends RigidBody
 
+export var startingWeapon : PackedScene;
+export var canMove: bool = true;
+
 export var mouse_sensitivity : Vector2 = Vector2(1, 1) 
 export(float, 0.0, 1.0) var mouse_acceleration : float = 0.5 
 
@@ -9,6 +12,9 @@ export(float, 0.0, 1.0) var acceleration_factor = 0.2
 export var leg_default_length : float = 0.8
 
 export var jump_speed = 8.0;
+
+var maxHealth: int = 100;
+var curHealth: int;
 
 
 export var forward_action = "player_forwards"
@@ -27,6 +33,7 @@ export(float, 0.0, 1.0) var fov_acceleration = 0.1
 var target_fov = default_fov
 
 var gunHolder : Spatial
+var audio : AudioStreamPlayer
 
 var target_velocity : Vector3 = Vector3.ZERO
 var yaw_pitch : Vector2 = Vector2.ZERO
@@ -41,6 +48,13 @@ func _ready():
 	if self.mouse_start_captured:
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	gunHolder = get_node("Camera/Gun_Holder");
+	audio = get_node("AudioStreamPlayer");
+	# Equip starting gun
+	if startingWeapon != null:
+		var g = startingWeapon.instance();
+		g.set("inUse", true);
+		pickUpGun(g);
+	curHealth = maxHealth;
 	pass # Replace with function body.
 
 func handle_orientation(event : InputEventMouseMotion):
@@ -59,6 +73,26 @@ func _unhandled_input(event : InputEvent):
 	if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
 		if event is InputEventMouseMotion:
 			handle_orientation(event)
+			
+	if event.is_action_pressed("Player_Switch_Knife"):
+		if gunHolder.get_child_count() > 1:
+			var knife: Node = gunHolder.get_child(0);
+			var gun: Node = gunHolder.get_child(1);
+			gun.visible = false;
+			gun.set("inUse", false);
+			knife.visible = true;
+			knife.set("inUse", true);
+			knife.get("uiManager").call("updateAmmoUI");
+	elif event.is_action_pressed("Player_Switch_Gun"):
+		if gunHolder.get_child_count() > 1:
+			var knife: Node = gunHolder.get_child(0);
+			var gun: Node = gunHolder.get_child(1);
+			gun.visible = true;
+			gun.set("inUse", true);
+			knife.visible = false;
+			knife.set("inUse", false);
+			gun.call("updateUI");
+		pass
 
 func handle_input():
 	self.target_velocity = Vector3.ZERO;
@@ -108,6 +142,8 @@ func handle_raycast():
 		self.on_floor = false;
 
 func _process(_delta : float):
+	if !canMove:
+		return;
 	self.yaw_pitch.x = lerp_angle(self.yaw_pitch.x, self.target_yaw_pitch.x, self.mouse_acceleration);
 	self.yaw_pitch.y = lerp_angle(self.yaw_pitch.y, self.target_yaw_pitch.y, self.mouse_acceleration);
 	$Camera.rotation = Vector3.ZERO;
@@ -118,6 +154,8 @@ func _process(_delta : float):
 	
 
 func _physics_process(delta):
+	if !canMove:
+		return;
 	handle_raycast();
 	handle_input();
 	handle_movement(delta);
@@ -126,9 +164,48 @@ func _physics_process(delta):
 func pickUpGun(Gun):
 	var gunPickup = Gun.get_parent();
 	#Check if player has gun to put back
-	if gunHolder.get_child_count() > 0:
-		gunPickup.call_deferred("gunSwap", gunHolder.get_child(0));
-	Gun.get_parent().remove_child(Gun);
+	if gunHolder.get_child_count() > 1:
+		gunPickup.call_deferred("gunSwap", gunHolder.get_child(1));
+	if Gun.get_parent() != null:
+		Gun.get_parent().remove_child(Gun);
 	gunHolder.add_child(Gun);
 	Gun.call("setAnimator", gunHolder);
 	pass
+	
+func pickUpCollected(type, amt) -> bool:
+	if type == "Ammo":
+		#Check if at max
+		var curA: int = gunHolder.get_child(1).get("curAmmo");
+		var maxA: int = gunHolder.get_child(1).get("ammoMax")
+		if curA >= maxA:
+			return false;
+		gunHolder.get_child(1).call("addBullets", amt);
+		curA = gunHolder.get_child(1).get("curAmmo");
+		#UI
+		if gunHolder.get_child(1).get("inUse"):
+			gunHolder.get_child(1).call("updateUI");
+	elif type == "Health":
+		#check if at max
+		if curHealth >= maxHealth:
+			return false;
+		#Check if will reach max
+		if curHealth + amt > maxHealth:
+			curHealth = maxHealth;
+		else:
+			curHealth += amt;
+		#UI
+		get_tree().root.get_child(0).get_node("UI").call("updatePlayerHealthUI", curHealth);
+	return true
+	
+func _on_Area_body_entered(body):
+	if body.name.find("Bullet") != -1 && curHealth > 0:
+		var damage : int = body.get("playerDamage");
+		if curHealth - damage <= 0:
+			curHealth = 0;
+			canMove = false;
+		else:
+			curHealth -= damage;
+			audio.play();
+		#UI
+		get_tree().root.get_child(0).get_node("UI").call("updatePlayerHealthUI", curHealth);
+	pass # Replace with function body.
