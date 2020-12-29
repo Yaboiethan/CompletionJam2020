@@ -1,0 +1,13 @@
+[remap]
+
+importer="MagicaVoxel-Importer"
+type="Mesh"
+path="res://.import/FarmFence.vox-d34cb48fd45ff934f664ca891d77093b.mesh"
+
+[deps]
+
+source_file="res://Assets/Voxel Assets/FarmFence.vox"
+dest_files=[ "res://.import/FarmFence.vox-d34cb48fd45ff934f664ca891d77093b.mesh" ]
+
+[params]
+

@@ -165,6 +165,7 @@ func pickUpGun(Gun):
 	#Check if player has gun to put back
 	if gunHolder.get_child_count() > 0:
 			gunHolder.get_child(0).visible = false;
+			gunHolder.get_child(0).set("inUse", false);
 	if gunHolder.get_child_count() > 1:
 		gunPickup.call_deferred("gunSwap", gunHolder.get_child(1));
 	if Gun.get_parent() != null:

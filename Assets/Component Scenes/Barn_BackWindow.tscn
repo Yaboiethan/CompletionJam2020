@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Assets/Materials/Stone_Mat.tres" type="Material" id=1]
+[ext_resource path="res://Assets/Voxel Assets/farm/farm-20-barn_roof.obj" type="ArrayMesh" id=2]
+[ext_resource path="res://Assets/Voxel Assets/farm/farm-21-barn.obj" type="ArrayMesh" id=3]
+
+[sub_resource type="PlaneMesh" id=1]
+
+[node name="Barn" type="Spatial"]
+
+[node name="Barn_Roof" type="CSGMesh" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.22738 )
+use_collision = true
+mesh = ExtResource( 2 )
+
+[node name="Barn_Obj" type="CSGMesh" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.22738 )
+calculate_tangents = false
+use_collision = true
+mesh = ExtResource( 3 )
+
+[node name="CSGBox" type="CSGBox" parent="Barn_Obj"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.56565, 3.47001, -15.7977 )
+operation = 2
+invert_faces = true
+width = 1.64877
+height = 1.05617
+depth = 0.49461
+
+[node name="Barn_Floor" type="CSGMesh" parent="."]
+transform = Transform( 3.79053, 0, 0, 0, 1, 0, 0, 0, 5.88355, -2.67702, -0.00686383, -5.87821 )
+use_collision = true
+mesh = SubResource( 1 )
+material = ExtResource( 1 )
