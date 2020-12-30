@@ -63,5 +63,6 @@ draw_pass_1 = SubResource( 5 )
 
 [node name="AudioPlayer" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource( 5 )
+unit_db = 5.0
 unit_size = 10.0
-max_distance = 200.0
+max_distance = 400.0

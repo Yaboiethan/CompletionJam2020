@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Assets/Voxel Assets/farm/farm-49-coop.obj" type="ArrayMesh" id=1]
+
+[node name="StaticBody" type="Spatial"]
+transform = Transform( -3.25841e-07, 0, -2, 0, 2, 0, 2, 0, -3.25841e-07, -85.702, 0.803773, 16.3199 )
+
+[node name="farm-49-coop" type="CSGMesh" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.37607, 0, 3.80395 )
+use_collision = true
+mesh = ExtResource( 1 )

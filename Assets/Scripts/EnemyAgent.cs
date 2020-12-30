@@ -22,7 +22,7 @@ public class EnemyAgent : KinematicBody
     [Export]
     private EnemyState curState = EnemyState.Patroling;
     [Export]
-    private float engageDistance = 15;
+    public float engageDistance = 15;
     [Export]
     private Vector3[] patrolPath;
     [Export]
@@ -32,14 +32,14 @@ public class EnemyAgent : KinematicBody
     private int pathId;
     Vector3 target;
 
-    private bool isAlive = true;
+    public bool isAlive = true;
     private bool inShootingRange = false;
 
     //Components
-    private AnimationPlayer anim;
+    public AnimationPlayer anim;
     private LevelManager level;
-    private AudioStreamPlayer3D audio;
-    private Gun mGun;
+    public AudioStreamPlayer3D audio;
+    public Gun mGun;
     private Timer timer;
 
     public override void _Ready()
@@ -73,7 +73,7 @@ public class EnemyAgent : KinematicBody
     public override void _PhysicsProcess(float delta)
     {
         base._PhysicsProcess(delta);
-        if(isAlive)
+        if(isAlive && Visible)
         {
             float dis;
             //Act on task, based on state
@@ -134,7 +134,7 @@ public class EnemyAgent : KinematicBody
                     target = LevelManager.getPlayerPos();
                     dis = (target - Translation).Length();
                     //Check if in range
-                    if (dis <= engageDistance - 7)
+                    if (dis <= engageDistance - 3)
                     {
                         inShootingRange = true;
                     }
@@ -179,9 +179,9 @@ public class EnemyAgent : KinematicBody
         pathId = 0;
     }
 
-    private void Hit()
+    public virtual void Hit()
     {
-        if (isAlive)
+        if (isAlive && Visible)
         {
             anim.Play("Agent_Dead");
             audio.Play();
@@ -209,7 +209,7 @@ public class EnemyAgent : KinematicBody
         }
     }
     //----------Signals
-    public void _on_Timer_timeout()
+    public virtual void _on_Timer_timeout()
     {
         if (!isAlive)
         {

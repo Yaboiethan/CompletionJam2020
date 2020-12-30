@@ -176,6 +176,9 @@ func pickUpGun(Gun):
 	
 func pickUpCollected(type, amt) -> bool:
 	if type == "Ammo":
+		#Check if have gun
+		if gunHolder.get_child_count() < 2:
+			return false;
 		#Check if at max
 		var curA: int = gunHolder.get_child(1).get("curAmmo");
 		var maxA: int = gunHolder.get_child(1).get("ammoMax")

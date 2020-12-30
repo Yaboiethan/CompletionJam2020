@@ -81,7 +81,7 @@ public class UI : Node
             GetNode<Control>("LevelBeat_Container/TextureRect/MarginContainer/VBoxContainer/NextLevelButton").Hide();
         }
         //Play some fanfare
-        level.changeMusic(2, -5);
+        level.changeMusic(2, -3);
     }
 
     public void updatePauseMenu()

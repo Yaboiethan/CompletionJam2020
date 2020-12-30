@@ -24,6 +24,7 @@ public class Gun : Weapon
     private List<Spatial> additionalFirePoints = new List<Spatial>();
     private Particles smokeParticles;
     private AudioStreamPlayer3D audio;
+    private bool locked = false;
 
     [Export]
     private AudioStream[] audioClips; //0 == fire sound, 1 == reload sound, 2 == jam sound
@@ -145,7 +146,7 @@ public class Gun : Weapon
      */
     public virtual void Shoot()
     {
-        if (canUse)
+        if (canUse && !locked)
         {
             //Spawn in bullet instance and adjust
             spawnBullet(true);
@@ -191,6 +192,12 @@ public class Gun : Weapon
     public bool canShoot()
     {
         return canUse;
+    }
+
+    public void canShoot(bool b)
+    {
+        canUse = b;
+        locked = b;
     }
 
     public void addBullets(int b)

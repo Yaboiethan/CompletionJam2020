@@ -126,7 +126,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6, 0 )
 cull_mask = 1048573
 current = true
 fov = 90.0
-far = 160.0
+far = 150.0
 
 [node name="Gun_Holder" type="Spatial" parent="Camera"]
 transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, -0.523, -0.602 )

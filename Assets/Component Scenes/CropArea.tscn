@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Assets/Voxel Assets/farm/farm-57-crop_end.obj" type="ArrayMesh" id=1]
+[ext_resource path="res://Assets/Voxel Assets/farm/farm-56-crop_mid.obj" type="ArrayMesh" id=2]
+
+[node name="CropArea" type="Spatial"]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, -86.3152, 1.26833, 61.9752 )
+
+[node name="farm-56-crop_mid" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.64658, 0, -1.75087 )
+mesh = ExtResource( 2 )
+material/0 = null
+
+[node name="farm-56-crop_mid2" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.64658, 0, -2.85098 )
+mesh = ExtResource( 2 )
+material/0 = null
+
+[node name="farm-57-crop_end" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.6355, 0, -1.98587 )
+mesh = ExtResource( 1 )
+material/0 = null
+
+[node name="farm-57-crop_end2" type="MeshInstance" parent="."]
+transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 7.6435, 0, 2.66912 )
+mesh = ExtResource( 1 )
+material/0 = null

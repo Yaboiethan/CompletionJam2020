@@ -1,0 +1,13 @@
+[remap]
+
+importer="MagicaVoxel-Importer"
+type="Mesh"
+path="res://.import/ScaredFarmer.vox-ae93e5487f6210f246835c0b98017afa.mesh"
+
+[deps]
+
+source_file="res://Assets/Voxel Assets/ScaredFarmer.vox"
+dest_files=[ "res://.import/ScaredFarmer.vox-ae93e5487f6210f246835c0b98017afa.mesh" ]
+
+[params]
+

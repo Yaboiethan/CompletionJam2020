@@ -1,0 +1,13 @@
+[remap]
+
+importer="MagicaVoxel-Importer"
+type="Mesh"
+path="res://.import/GatlingGun.vox-91fff0ac4b7147afc5faf596997b5d00.mesh"
+
+[deps]
+
+source_file="res://Assets/Guns_MV/GatlingGun.vox"
+dest_files=[ "res://.import/GatlingGun.vox-91fff0ac4b7147afc5faf596997b5d00.mesh" ]
+
+[params]
+

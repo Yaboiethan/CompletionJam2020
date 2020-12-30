@@ -1,0 +1,13 @@
+[remap]
+
+importer="MagicaVoxel-Importer"
+type="Mesh"
+path="res://.import/SquareCEO.vox-5f6006f2a073caa0868017e231244785.mesh"
+
+[deps]
+
+source_file="res://Assets/Voxel Assets/SquareCEO.vox"
+dest_files=[ "res://.import/SquareCEO.vox-5f6006f2a073caa0868017e231244785.mesh" ]
+
+[params]
+

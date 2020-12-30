@@ -7,7 +7,7 @@ public class PickUp : Area
 {
     //Components
     [Export]
-    pickupType mType;
+    public pickupType mType;
     [Export]
     private Mesh ammoMesh;
     private AudioStreamPlayer3D audio;

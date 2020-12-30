@@ -1,0 +1,198 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Assets/Component Scenes/Fence.tscn" type="PackedScene" id=1]
+
+[node name="Border_Fence" type="Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 63.3129, 0.773767, -12.9813 )
+
+[node name="Fence" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 95.755, 0, 10.3008 )
+
+[node name="Fence2" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 101.336, 0, 10.3008 )
+
+[node name="Fence3" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 106.935, 0, 10.3008 )
+
+[node name="Fence4" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 112.516, 0, 10.3008 )
+
+[node name="Fence5" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 73.4108, 0, 10.3008 )
+
+[node name="Fence6" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 78.9922, 0, 10.3008 )
+
+[node name="Fence7" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 84.5907, 0, 10.3008 )
+
+[node name="Fence8" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 90.1721, 0, 10.3008 )
+
+[node name="Fence9" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 51.1468, 0, 10.3008 )
+
+[node name="Fence10" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 56.7278, 0, 10.3008 )
+
+[node name="Fence11" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 62.3268, 0, 10.3008 )
+
+[node name="Fence12" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 67.9078, 0, 10.3008 )
+
+[node name="Fence13" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 28.8028, 0, 10.3008 )
+
+[node name="Fence14" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 34.3838, 0, 10.3008 )
+
+[node name="Fence15" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 39.9828, 0, 10.3008 )
+
+[node name="Fence16" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 45.5638, 0, 10.3008 )
+
+[node name="Fence17" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.50579, 0, 10.3008 )
+
+[node name="Fence18" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.0868, 0, 10.3008 )
+
+[node name="Fence19" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 17.6858, 0, 10.3008 )
+
+[node name="Fence20" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 23.2668, 0, 10.3008 )
+
+[node name="Fence21" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15.8382, 0, 10.3008 )
+
+[node name="Fence22" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10.2572, 0, 10.3008 )
+
+[node name="Fence23" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.65921, 0, 10.3008 )
+
+[node name="Fence24" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.922787, 0, 10.3008 )
+
+[node name="Fence25" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -38.1032, 0, 10.3008 )
+
+[node name="Fence26" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -32.5212, 0, 10.3008 )
+
+[node name="Fence27" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -26.9232, 0, 10.3008 )
+
+[node name="Fence28" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -21.3412, 0, 10.3008 )
+
+[node name="Fence29" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -60.4472, 0, 10.3008 )
+
+[node name="Fence30" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -54.8652, 0, 10.3008 )
+
+[node name="Fence31" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -49.2672, 0, 10.3008 )
+
+[node name="Fence32" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -43.6852, 0, 10.3008 )
+
+[node name="Fence33" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -82.8082, 0, 10.3008 )
+
+[node name="Fence34" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -77.2262, 0, 10.3008 )
+
+[node name="Fence35" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -71.6282, 0, 10.3008 )
+
+[node name="Fence36" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -66.0472, 0, 10.3008 )
+
+[node name="Fence37" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -105.152, 0, 10.3008 )
+
+[node name="Fence38" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -99.5712, 0, 10.3008 )
+
+[node name="Fence39" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -93.9722, 0, 10.3008 )
+
+[node name="Fence40" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -88.3912, 0, 10.3008 )
+
+[node name="Fence41" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -127.416, 0, 10.3008 )
+
+[node name="Fence42" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -121.835, 0, 10.3008 )
+
+[node name="Fence43" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -116.236, 0, 10.3008 )
+
+[node name="Fence44" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -110.655, 0, 10.3008 )
+
+[node name="Fence45" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -149.76, 0, 10.3008 )
+
+[node name="Fence46" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -144.179, 0, 10.3008 )
+
+[node name="Fence47" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -138.58, 0, 10.3008 )
+
+[node name="Fence48" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -132.999, 0, 10.3008 )
+
+[node name="Fence49" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -172.057, 0, 10.3008 )
+
+[node name="Fence50" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -166.476, 0, 10.3008 )
+
+[node name="Fence51" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -160.877, 0, 10.3008 )
+
+[node name="Fence52" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -155.296, 0, 10.3008 )
+
+[node name="Fence53" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -194.401, 0, 10.3008 )
+
+[node name="Fence54" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -188.82, 0, 10.3008 )
+
+[node name="Fence55" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -183.222, 0, 10.3008 )
+
+[node name="Fence56" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -177.64, 0, 10.3008 )
+
+[node name="Fence57" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -216.666, 0, 10.3008 )
+
+[node name="Fence58" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -211.084, 0, 10.3008 )
+
+[node name="Fence59" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -205.486, 0, 10.3008 )
+
+[node name="Fence60" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -199.904, 0, 10.3008 )
+
+[node name="Fence61" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -239.01, 0, 10.3008 )
+
+[node name="Fence62" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -233.428, 0, 10.3008 )
+
+[node name="Fence63" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -227.83, 0, 10.3008 )
+
+[node name="Fence64" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -222.249, 0, 10.3008 )

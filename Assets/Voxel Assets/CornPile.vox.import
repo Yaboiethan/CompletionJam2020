@@ -1,0 +1,13 @@
+[remap]
+
+importer="MagicaVoxel-Importer"
+type="Mesh"
+path="res://.import/CornPile.vox-4b0236d10ed7146436e27e80c96b8496.mesh"
+
+[deps]
+
+source_file="res://Assets/Voxel Assets/CornPile.vox"
+dest_files=[ "res://.import/CornPile.vox-4b0236d10ed7146436e27e80c96b8496.mesh" ]
+
+[params]
+

@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Assets/Voxel Assets/CornPile.vox" type="ArrayMesh" id=1]
+
+[sub_resource type="BoxShape" id=3]
+extents = Vector3( 20.5533, 18.8302, 21.9559 )
+
+[node name="Farm_Meshlib" type="Spatial"]
+
+[node name="Corn_Block" type="MeshInstance" parent="."]
+transform = Transform( 0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, 0, 0 )
+cast_shadow = 0
+mesh = ExtResource( 1 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Corn_Block"]
+input_ray_pickable = false
+
+[node name="CollisionShape" type="CollisionShape" parent="Corn_Block/StaticBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 18.354, 0 )
+shape = SubResource( 3 )

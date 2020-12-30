@@ -329,5 +329,5 @@ material/0 = null
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 11 )
-volume_db = -3.0
+volume_db = -5.0
 autoplay = true
